@@ -74,7 +74,7 @@
     <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2023/03/15/hello-world/" class="article-date">
-  <time class="dt-published" datetime="2023-03-15T14:52:03.981Z" itemprop="datePublished">2023-03-15</time>
+  <time class="dt-published" datetime="2023-03-15T15:01:55.783Z" itemprop="datePublished">2023-03-15</time>
 </a>
     
   </div>
@@ -110,52 +110,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/03/15/hello-world/" data-id="clf9sx91n0000fgn5hqehc8zy" data-title="Hello World" class="article-share-link">Teilen</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-programmingLanguages/log4j2" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/03/15/programmingLanguages/log4j2/" class="article-date">
-  <time class="dt-published" datetime="2023-03-15T00:26:58.000Z" itemprop="datePublished">2023-03-15</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/03/15/programmingLanguages/log4j2/">log4j2</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="引入方法"><a href="#引入方法" class="headerlink" title="引入方法"></a>引入方法</h1><p>单独引入</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- Maven --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.logging.log4j<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>log4j-api<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.14.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.logging.log4j<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>log4j-core<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.14.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>springboot 引入</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-log4j2<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;UTF-8&quot;</span>?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">Configuration</span> <span class="attr">status</span>=<span class="string">&quot;INFO&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">Appenders</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">Console</span> <span class="attr">name</span>=<span class="string">&quot;Console&quot;</span> <span class="attr">target</span>=<span class="string">&quot;SYSTEM_OUT&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">PatternLayout</span> <span class="attr">pattern</span>=<span class="string">&quot;%d&#123;yyyy-MM-dd HH:mm:ss.SSS&#125; [%t] %level %logger&#123;36&#125; - %msg%n&quot;</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">Console</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">Appenders</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">Loggers</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">Root</span> <span class="attr">level</span>=<span class="string">&quot;INFO&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">AppenderRef</span> <span class="attr">ref</span>=<span class="string">&quot;Console&quot;</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">Root</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">Loggers</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">Configuration</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2023/03/15/programmingLanguages/log4j2/" data-id="clf9sx91t0001fgn5avkp2d1r" data-title="log4j2" class="article-share-link">Teilen</a>
+      <a data-url="http://example.com/2023/03/15/hello-world/" data-id="clf9ta0pa0000glowcymx4j4d" data-title="Hello World" class="article-share-link">Teilen</a>
       
       
       
@@ -199,10 +154,6 @@
         
           <li>
             <a href="/2023/03/15/hello-world/">Hello World</a>
-          </li>
-        
-          <li>
-            <a href="/2023/03/15/programmingLanguages/log4j2/">log4j2</a>
           </li>
         
       </ul>
