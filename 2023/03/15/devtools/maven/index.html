@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>maven | 如混的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="I. Maven 的简介1.1 什么是 Maven？Maven 是一款先进的项目管理和构建工具，用于管理 Java 项目的构建、文档和报告等各个方面。Maven 不仅可以管理项目构建和依赖，还可以自动构建测试、发布、文档生成等过程。 1.2 Maven 的主要特点Maven 具有约定优于配置、项目对象模型（POM）、依赖管理、统一的构建生命周期等特点。Maven 支持大型多模块项目，可以进行递归依">
+<meta property="og:type" content="article">
+<meta property="og:title" content="maven">
+<meta property="og:url" content="https://luolong47.github.io/2023/03/15/devtools/maven/index.html">
+<meta property="og:site_name" content="如混的博客">
+<meta property="og:description" content="I. Maven 的简介1.1 什么是 Maven？Maven 是一款先进的项目管理和构建工具，用于管理 Java 项目的构建、文档和报告等各个方面。Maven 不仅可以管理项目构建和依赖，还可以自动构建测试、发布、文档生成等过程。 1.2 Maven 的主要特点Maven 具有约定优于配置、项目对象模型（POM）、依赖管理、统一的构建生命周期等特点。Maven 支持大型多模块项目，可以进行递归依">
+<meta property="og:locale">
+<meta property="article:published_time" content="2023-03-15T07:59:43.000Z">
+<meta property="article:modified_time" content="2023-03-21T06:58:16.844Z">
+<meta property="article:author" content="如混">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="如混的博客" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">如混的博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Suche"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://luolong47.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-devtools/maven" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/03/15/devtools/maven/" class="article-date">
+  <time class="dt-published" datetime="2023-03-15T07:59:43.000Z" itemprop="datePublished">2023-03-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      maven
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="I-Maven-的简介"><a href="#I-Maven-的简介" class="headerlink" title="I. Maven 的简介"></a>I. Maven 的简介</h1><h2 id="1-1-什么是-Maven？"><a href="#1-1-什么是-Maven？" class="headerlink" title="1.1 什么是 Maven？"></a>1.1 什么是 Maven？</h2><p>Maven 是一款先进的项目管理和构建工具，用于管理 Java 项目的构建、文档和报告等各个方面。<br>Maven 不仅可以管理项目构建和依赖，还可以自动构建测试、发布、文档生成等过程。</p>
+<h2 id="1-2-Maven-的主要特点"><a href="#1-2-Maven-的主要特点" class="headerlink" title="1.2 Maven 的主要特点"></a>1.2 Maven 的主要特点</h2><p>Maven 具有约定优于配置、项目对象模型（POM）、依赖管理、统一的构建生命周期等特点。<br>Maven 支持大型多模块项目，可以进行递归依赖关系的管理，并可以定制项目构建过程。</p>
+<h2 id="1-3-Maven-的历史"><a href="#1-3-Maven-的历史" class="headerlink" title="1.3 Maven 的历史"></a>1.3 Maven 的历史</h2><p>Maven 最初由 Jason van Zyl 于 2002 年创建，旨在改变 Java 项目的构建方式。<br>自 2005 年以来，Maven 已成为 Java 开发中最受欢迎的项目管理和构建工具之一。</p>
+<h2 id="1-4-Maven-的优势"><a href="#1-4-Maven-的优势" class="headerlink" title="1.4 Maven 的优势"></a>1.4 Maven 的优势</h2><p>使项目的构建和代码管理更一致性、稳定性和可维护性。<br>管理多依赖和构建过程，提高项目的质量和可靠性。<br>提高开发和构建效率，减少重复工作。</p>
+<h2 id="1-5-Maven-的缺点"><a href="#1-5-Maven-的缺点" class="headerlink" title="1.5 Maven 的缺点"></a>1.5 Maven 的缺点</h2><p>由于约定优于配置的特点，一些特殊的项目需要进行额外的配置。<br>初学者可能需要花时间学习 Maven 的一些概念和工具。<br>某些情况下，Maven 可能在构建大型项目时会导致较慢的构建速度。</p>
+<h1 id="II-Maven-的基本概念"><a href="#II-Maven-的基本概念" class="headerlink" title="II. Maven 的基本概念"></a>II. Maven 的基本概念</h1><h2 id="2-1-项目对象模型（POM）"><a href="#2-1-项目对象模型（POM）" class="headerlink" title="2.1 项目对象模型（POM）"></a>2.1 项目对象模型（POM）</h2><ul>
+<li>POM 是 Maven 的核心概念，是一个 XML 格式的文件，用于描述一个 Maven 项目的元数据和配置信息。</li>
+<li>POM 包括信息如：项目的坐标、依赖关系、构建配置、开发者列表、源代码、测试代码路径等。</li>
+</ul>
+<h2 id="2-2-依赖"><a href="#2-2-依赖" class="headerlink" title="2.2 依赖"></a>2.2 依赖</h2><ul>
+<li>依赖是指一个构建需要的其他库或工具，Maven 使用依赖描述了项目所需要的 Jar 包或其他依赖项，并自动从仓库下载这些依赖。</li>
+<li>在 POM 中，可以通过<dependency>元素来声明依赖项，其中包括依赖项的坐标、范围等。</li>
+</ul>
+<h2 id="2-3-仓库"><a href="#2-3-仓库" class="headerlink" title="2.3 仓库"></a>2.3 仓库</h2><ul>
+<li>仓库是 Maven 用于管理组织、存储和获取项目所需依赖的地方。</li>
+<li>Maven 有两种仓库：本地仓库和中央仓库。本地仓库一般在本地磁盘上存放，而中央仓库存放在网络上。</li>
+</ul>
+<h2 id="2-4-生命周期和阶段"><a href="#2-4-生命周期和阶段" class="headerlink" title="2.4 生命周期和阶段"></a>2.4 生命周期和阶段</h2><ul>
+<li>生命周期定义了 Maven 项目的构建过程，它由一些阶段组成，每个阶段都是代表了一个构建类型，如编译、测试、打包等。</li>
+<li>一个构建过程中只能运行一组阶段，每个阶段都有其默认的绑定目标和插件。</li>
+</ul>
+<h2 id="2-5-插件"><a href="#2-5-插件" class="headerlink" title="2.5 插件"></a>2.5 插件</h2><ul>
+<li>插件提供了 Maven 构建过程中的额外功能和扩展，如编译、测试、打包、发布等。</li>
+<li>Maven 插件是基于 Java 程序的，可以在 POM 文件中声明，也可以通过命令行使用。</li>
+</ul>
+<h2 id="2-6-构建配置"><a href="#2-6-构建配置" class="headerlink" title="2.6 构建配置"></a>2.6 构建配置</h2><ul>
+<li>构建配置是 POM 的一个主要部分，它提供了生成项目的配置信息，如 Maven 版本、编译器版本、编译参数、资源文件等。</li>
+<li>构建配置是 Maven 根据 POM 定义的信息对项目进行构建的核心部分。</li>
+</ul>
+<h2 id="2-7-生命周期"><a href="#2-7-生命周期" class="headerlink" title="2.7 生命周期"></a>2.7 生命周期</h2><ul>
+<li>通过定义一组有序的阶段和目标（goal），实现了 Maven 构建的自动化、标准化和扩展性。</li>
+<li>生命周期分为三个阶段：clean、default 和 site，其中 clean 阶段用来清除上一次构建的结果，default 阶段代表代码编译、打包、测试等构建工作，site 阶段处理项目文档、报告等。</li>
+</ul>
+<h2 id="2-8-POM-继承"><a href="#2-8-POM-继承" class="headerlink" title="2.8 POM 继承"></a>2.8 POM 继承</h2><ul>
+<li>POM 继承是指子项目可以继承父项目的 POM 中的配置信息，避免重复定义和维护。</li>
+<li>POM 继承是 Maven 管理多模块项目的关键部分，可以使得子项目对共同依赖和其他配置方法进行统一管理。</li>
+</ul>
+<h1 id="III-Maven-的安装和配置"><a href="#III-Maven-的安装和配置" class="headerlink" title="III. Maven 的安装和配置"></a>III. Maven 的安装和配置</h1><h2 id="3-1-下载和安装-Maven"><a href="#3-1-下载和安装-Maven" class="headerlink" title="3.1 下载和安装 Maven"></a>3.1 下载和安装 Maven</h2><ul>
+<li>从官方网站（<a target="_blank" rel="noopener" href="https://maven.apache.org/">https://maven.apache.org/</a>）上下载 Maven 的最新版本。</li>
+<li>解压缩下载文件，将 Maven 文件夹放置到指定的安装目录下。</li>
+</ul>
+<h2 id="3-2-配置-Maven-环境变量"><a href="#3-2-配置-Maven-环境变量" class="headerlink" title="3.2 配置 Maven 环境变量"></a>3.2 配置 Maven 环境变量</h2><ul>
+<li>配置 Maven 的环境变量便于在命令行中使用 Maven 命令。</li>
+<li>在系统变量中添加 Maven_HOME 变量，值为 Maven 安装目录的路径。</li>
+<li>在系统变量“Path”中追加%Maven_HOME%\bin%。</li>
+</ul>
+<h2 id="3-3-Maven-的-settings-xml-配置文件"><a href="#3-3-Maven-的-settings-xml-配置文件" class="headerlink" title="3.3 Maven 的 settings.xml 配置文件"></a>3.3 Maven 的 settings.xml 配置文件</h2><ul>
+<li>settings.xml 文件是 Maven 的全局配置文件，存放在 Maven 的 conf 目录下。</li>
+<li>可以在 settings.xml 文件中定义 Maven 的代理设置、安全信息、仓库设置等。</li>
+<li>也可以在项目的 pom.xml 文件中覆盖 settings.xml 文件中的配置，达到不同项目配置环境的目的。</li>
+</ul>
+<h2 id="3-4-Maven-镜像配置"><a href="#3-4-Maven-镜像配置" class="headerlink" title="3.4 Maven 镜像配置"></a>3.4 Maven 镜像配置</h2><ul>
+<li>Maven 镜像是项目构建过程所需的组件、插件、依赖等元素的远程资源库。</li>
+<li>镜像可以使用本地、阿里云、中央仓库等多个位置。</li>
+<li>可以在 pom.xml 或 settings.xml 中修改<mirrors>元素来配置 Maven 镜像。</li>
+</ul>
+<h1 id="IV-Maven-项目的创建与管理"><a href="#IV-Maven-项目的创建与管理" class="headerlink" title="IV. Maven 项目的创建与管理"></a>IV. Maven 项目的创建与管理</h1><h2 id="4-1-创建-Maven-项目"><a href="#4-1-创建-Maven-项目" class="headerlink" title="4.1 创建 Maven 项目"></a>4.1 创建 Maven 项目</h2><ul>
+<li>可以使用 Maven Archetype 插件创建一个 Maven 项目，也可以手动创建 Maven 项目。</li>
+<li>命令行方式，使用<code>mvn archetype:generate</code>命令创建一个 Maven 项目，根据提示输入基本信息即可创建。</li>
+<li>使用 IDE 工具创建一个 Maven 项目，IDE 一般提供 Maven 项目的创建向导，根据提示输入基本信息即可创建。</li>
+</ul>
+<h2 id="4-2-项目结构"><a href="#4-2-项目结构" class="headerlink" title="4.2 项目结构"></a>4.2 项目结构</h2><ul>
+<li>Maven 项目结构是由一组标准化目录组成的。</li>
+<li><code>src/main/java</code>: 程序源代码</li>
+<li><code>src/main/resources</code>: 资源文件</li>
+<li><code>src/test/java</code>: 程序测试代码</li>
+<li><code>src/test/resources</code>: 测试使用的资源文件</li>
+<li><code>target</code>: 输出目录</li>
+</ul>
+<h2 id="4-3-构建-Maven-项目"><a href="#4-3-构建-Maven-项目" class="headerlink" title="4.3 构建 Maven 项目"></a>4.3 构建 Maven 项目</h2><ul>
+<li>使用 mvn 命令对项目进行构建，Maven 会处理 POM 文件，对关联的项目进行构建工作。</li>
+<li>可以指定需要执行的构建目标，在命令行中添加参数。</li>
+<li>Maven 会在项目的 target 目录中生成最终的输出文件，如 jar、war 等。</li>
+</ul>
+<h2 id="4-4-依赖管理"><a href="#4-4-依赖管理" class="headerlink" title="4.4 依赖管理"></a>4.4 依赖管理</h2><ul>
+<li>Maven 使用依赖关系声明来自动从中央仓库和其他仓库获取和管理构建组件和库。</li>
+<li>POM 文件中使用<dependency>元素声明依赖关系，包括依赖组 ID、依赖 Artifact ID 和版本号。</li>
+<li>Maven 会下载相应的组件、插件或库，并自动管理依赖关系，自动解决重复或冲突的依赖。</li>
+</ul>
+<h2 id="4-5-发布-Maven-项目"><a href="#4-5-发布-Maven-项目" class="headerlink" title="4.5 发布 Maven 项目"></a>4.5 发布 Maven 项目</h2><ul>
+<li>可以使用 Maven 插件在 Maven 仓库中发布构建的项目，以供其他项目使用。</li>
+<li>将 Maven 项目构建为一个可重用的包时，可以使用 maven-deploy-plugin 插件来将其部署到 Maven 仓库中。</li>
+<li>部署时要指定发布目标仓库和登录验证信息。</li>
+</ul>
+<h2 id="4-6-多模块项目"><a href="#4-6-多模块项目" class="headerlink" title="4.6 多模块项目"></a>4.6 多模块项目</h2><ul>
+<li>多模块项目是指由多个项目成员组成的项目，通常有多个子项目、模块和依赖关系。</li>
+<li>可以使用 Maven 的 POM 继承和 maven-multi-module-plugin 插件来管理多模块项目。</li>
+<li>一个主父项目可以定义所有的仓库、插件、依赖和编译设置，同时它可以继承给每个子项目，以避免重复的设置。</li>
+</ul>
+<h1 id="V-依赖管理"><a href="#V-依赖管理" class="headerlink" title="V. 依赖管理"></a>V. 依赖管理</h1><h2 id="5-1-依赖声明"><a href="#5-1-依赖声明" class="headerlink" title="5.1 依赖声明"></a>5.1 依赖声明</h2><ul>
+<li>依赖声明是 Maven 项目中管理依赖关系的关键。</li>
+<li>在 POM 文件中，可以使用<dependency>元素声明一个依赖项。</li>
+<li><dependency>元素包含几个元素，包括<code>groupID</code>、<code>artifactID</code>、版本、范围、可选性等信息。</li>
+</ul>
+<h2 id="5-2-依赖范围-scope"><a href="#5-2-依赖范围-scope" class="headerlink" title="5.2 依赖范围(scope)"></a>5.2 依赖范围(scope)</h2><ul>
+<li>依赖范围定义依赖会在哪个阶段起作用，以及是否会在应用程序中打包。</li>
+<li>可以在<dependency>元素中使用 scope 属性定义依赖范围。</li>
+<li>依赖范围包括<code>compile</code>、<code>test</code>、<code>provided</code>、<code>runtime</code>和<code>system</code>等。</li>
+</ul>
+<h2 id="5-3-传递性依赖"><a href="#5-3-传递性依赖" class="headerlink" title="5.3 传递性依赖"></a>5.3 传递性依赖</h2><ul>
+<li>传递性依赖是指当项目有多个依赖，其中一些依赖与其他依赖存在依赖关系时的行为。</li>
+<li>Maven 会自动解决传递性依赖，它会查找每个依赖项的依赖项，并按需要在构建时添加它们。</li>
+<li>可以使用<code>mvn dependency:tree</code>来查看依赖树，找到与要求的依赖关系不同的依赖。</li>
+</ul>
+<h2 id="5-4-依赖排除"><a href="#5-4-依赖排除" class="headerlink" title="5.4 依赖排除"></a>5.4 依赖排除</h2><ul>
+<li>在 POM 文件中，可以使用<code>&lt;exclusions&gt;</code>元素来排除依赖项的特定传递性依赖项。</li>
+<li>可以排除一个依赖的特定传递性依赖，也可以排除所有的传递性依赖。</li>
+</ul>
+<h2 id="5-5-依赖冲突"><a href="#5-5-依赖冲突" class="headerlink" title="5.5 依赖冲突"></a>5.5 依赖冲突</h2><ul>
+<li>依赖冲突是指项目中有多个依赖项，它们引用相同的库的不同版本，导致项目构建失败或运行错误。</li>
+<li>Maven 通过一个规则来解决依赖冲突：最短路径优先。</li>
+<li>如果有多个版本的库存在于传递性依赖关系中，则在构建期间只使用路径最短（即首先匹配的）依赖项版本。</li>
+</ul>
+<h2 id="5-6-依赖管理实践"><a href="#5-6-依赖管理实践" class="headerlink" title="5.6 依赖管理实践"></a>5.6 依赖管理实践</h2><ul>
+<li>建议定义依赖的正确版本。</li>
+<li>确保谨慎对待传递性依赖关系。不要让 Maven 自动管理所有依赖关系，手动列出关键依赖项。</li>
+<li>不要通过指定范围来消除依赖冲突，而应手动解决它们。</li>
+<li>如果可能的话，应将所有依赖项与应用程序一起打包，以便在不同环境中移动或发布该应用程序。</li>
+</ul>
+<h1 id="VI-构建和部署"><a href="#VI-构建和部署" class="headerlink" title="VI. 构建和部署"></a>VI. 构建和部署</h1><h2 id="6-1-构建过程"><a href="#6-1-构建过程" class="headerlink" title="6.1 构建过程"></a>6.1 构建过程</h2><ul>
+<li>构建过程是将源代码转换为可执行的应用程序的过程。</li>
+<li>Maven 的默认构建阶段包括 clean、validate、compile、test、package、verify、install 和 deploy。</li>
+</ul>
+<h2 id="6-2-构建目标"><a href="#6-2-构建目标" class="headerlink" title="6.2 构建目标"></a>6.2 构建目标</h2><ul>
+<li>Maven 的每个构建阶段都包含零个或多个构建目标，可以使用 mvn 命令指定要执行的构建目标。</li>
+<li>使用命令 mvn package 可以打包项目，包括 jar、war 等形式。</li>
+<li>使用命令 mvn install 可以将打包的项目复制到本地仓库中。</li>
+</ul>
+<h2 id="6-3-部署过程"><a href="#6-3-部署过程" class="headerlink" title="6.3 部署过程"></a>6.3 部署过程</h2><ul>
+<li>部署是将可执行的应用程序上传到专用仓库或服务器的过程。</li>
+<li>在部署之前，需要添加 Maven 仓库的 URL 和安全证书信息到 settings.xml 文件。</li>
+<li>部署 Maven 项目可以使用 maven-deploy-plugin 插件，利用命令<code>mvn deploy</code>。</li>
+</ul>
+<h2 id="6-4-版本控制"><a href="#6-4-版本控制" class="headerlink" title="6.4 版本控制"></a>6.4 版本控制</h2><ul>
+<li>版本是 Maven 项目的核心组成部分，每一次更改都应该相应地增加版本号。</li>
+<li>版本控制可以使用<version>元素来控制 Maven 项目的版本。</li>
+<li>可以使用 SNAPSHOT 关键字使版本成为开发版本，以便于管理和发布快照版本。</li>
+</ul>
+<h2 id="6-5-CI-x2F-CD-集成"><a href="#6-5-CI-x2F-CD-集成" class="headerlink" title="6.5 CI&#x2F;CD 集成"></a>6.5 CI&#x2F;CD 集成</h2><ul>
+<li>CI&#x2F;CD 集成是将 Maven 项目与持续集成和持续部署（CI&#x2F;CD）工具集成的过程。</li>
+<li>许多 CI&#x2F;CD 工具，如 Jenkins、Travis CI、CircleCI 等，都具有 Maven 项目的自动集成和部署功能。</li>
+<li>通过 CI&#x2F;CD 工具的持续构建和持续部署功能，可以使构建和部署的过程更加高效和自动化。</li>
+</ul>
+<h1 id="VII-插件开发"><a href="#VII-插件开发" class="headerlink" title="VII. 插件开发"></a>VII. 插件开发</h1><h2 id="7-1-插件介绍"><a href="#7-1-插件介绍" class="headerlink" title="7.1 插件介绍"></a>7.1 插件介绍</h2><ul>
+<li>插件是 Maven 中一种可以扩展和增强构建和打包过程的技术。</li>
+<li>插件是基于 Maven 插件框架（Mojo）构建的，并且遵循特定的插件生命周期和插件元数据规范。</li>
+</ul>
+<h2 id="7-2-插件类型"><a href="#7-2-插件类型" class="headerlink" title="7.2 插件类型"></a>7.2 插件类型</h2><ul>
+<li>Maven 中有两种类型的插件：构建插件和报告插件。</li>
+<li>构建插件用于扩展 Maven 构建过程，而报告插件用于生成针对代码质量、测试结果、文档等的各种类型的报告。</li>
+</ul>
+<h2 id="7-3-插件生命周期"><a href="#7-3-插件生命周期" class="headerlink" title="7.3 插件生命周期"></a>7.3 插件生命周期</h2><ul>
+<li>插件生命周期是指在 Maven 构建过程中一系列事件发生的顺序。这些事件将触发某个或某些插件执行。</li>
+<li>生命周期是由 Maven 定义的，允许插件在正确的时间执行。</li>
+</ul>
+<h2 id="7-4-插件描述（plugin-descriptor）"><a href="#7-4-插件描述（plugin-descriptor）" class="headerlink" title="7.4 插件描述（plugin descriptor）"></a>7.4 插件描述（plugin descriptor）</h2><ul>
+<li>插件描述是插件开发的核心组成部分之一，它描述了插件的元数据和插件的 Mojo 的信息。</li>
+<li>插件描述是以 XML 格式表示的，总是命名为插件 ID 后缀为-plugin.xml 的文件。</li>
+</ul>
+<h2 id="7-5-插件元数据"><a href="#7-5-插件元数据" class="headerlink" title="7.5 插件元数据"></a>7.5 插件元数据</h2><ul>
+<li>插件元数据是插件描述的一个组成部分，它是描述插件及其 Mojo 的信息的语义元素。</li>
+<li>插件元数据包含插件元素、Mojo 元素、目标元素等。</li>
+<li>插件元数据还包括插件依赖、插件要求等信息。</li>
+</ul>
+<h2 id="7-6-Mojo"><a href="#7-6-Mojo" class="headerlink" title="7.6 Mojo"></a>7.6 Mojo</h2><ul>
+<li>Mojo 是插件的核心组成部分之一，也是插件执行的基本单位。</li>
+<li>每个 Mojo 负责单一的构建任务，例如编译代码或运行测试。</li>
+<li>插件的 Mojo 需要实现 org.apache.maven.plugin.Mojo 接口，描述 Mojo 元数据，并且实现一个或多个处理步骤的 execute 方法。</li>
+</ul>
+<h2 id="7-7-插件开发实践"><a href="#7-7-插件开发实践" class="headerlink" title="7.7 插件开发实践"></a>7.7 插件开发实践</h2><ul>
+<li>开发 Mojo 时，要保持单一责任原则和高内聚低耦合原则。</li>
+<li>为每个 Mojo 提供足够的自定义选项，以便外部 Maven 项目可以自定义其行为。</li>
+<li>对于 Mojo 要做的复杂任务，建议考虑使用多个 Mojo 来执行其任务组合实现。</li>
+<li>最后，要遵循 Maven 插件开发的最佳实践和规范，以免引起构建或测试问题。</li>
+</ul>
+<h2 id="7-8-插件开发样例"><a href="#7-8-插件开发样例" class="headerlink" title="7.8 插件开发样例"></a>7.8 插件开发样例</h2><p>当然，请参考下面这个简单的插件示例：</p>
+<p>首先创建一个 Maven 项目，在 pom.xml 文件中添加以下插件元数据：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">build</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">plugins</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.example<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>my-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.0-SNAPSHOT<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">executions</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">execution</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">id</span>&gt;</span>say-hello-to-maven<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">phase</span>&gt;</span>compile<span class="tag">&lt;/<span class="name">phase</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">goals</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">goal</span>&gt;</span>sayhi<span class="tag">&lt;/<span class="name">goal</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;/<span class="name">goals</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">execution</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">executions</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">plugins</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">build</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>该插件将在编译时执行，并调用其中一个 Mojo（即说“hello”到 Maven 的 Mojo）。</p>
+<p>创建一个名为 HelloWorldMojo.java 的 Java 类，该类将实现 your-custom-mojo 描述（your-custom-mojo 是你自定义的 Mojo 描述名称）。在这个类中，我们可以调用 getLog() 方法来记录我们的信息，可以设置一些参数来自定义它的行为，例如 destinationDirectory（指定保存 sayhi 生成文件的输出目录）：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.example;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.apache.maven.plugin.AbstractMojo;</span><br><span class="line"><span class="keyword">import</span> org.apache.maven.plugin.MojoExecutionException;</span><br><span class="line"><span class="keyword">import</span> org.apache.maven.plugin.MojoFailureException;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Says &quot;Hi&quot; to the user.</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@goal</span> sayhi</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@phase</span> compile</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">HelloWorldMojo</span> <span class="keyword">extends</span> <span class="title class_">AbstractMojo</span> &#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * The directory to place our generated say hi file.</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@parameter</span> expression=&quot;$&#123;project.build.directory&#125;&quot;</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@required</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> String outputDirectory;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">execute</span><span class="params">()</span> <span class="keyword">throws</span> MojoExecutionException, MojoFailureException</span><br><span class="line">    &#123;</span><br><span class="line">        getLog().info(<span class="string">&quot;Hello, Maven!&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>将这个类打包到 my-plugin 中，使用该插件。可以使用以下命令来构建该插件：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn package</span><br></pre></td></tr></table></figure>
+
+<p>在 Maven 项目中使用插件，调用 Mojo：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">build</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">plugins</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.example<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>my-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.0-SNAPSHOT<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">executions</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">execution</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">id</span>&gt;</span>say-hello-to-maven<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">phase</span>&gt;</span>compile<span class="tag">&lt;/<span class="name">phase</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">goals</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">goal</span>&gt;</span>sayhi<span class="tag">&lt;/<span class="name">goal</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;/<span class="name">goals</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">execution</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">executions</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">plugins</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">build</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>在 Maven 项目的根目录中执行以下命令，它将调用我们的插件：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn compile</span><br></pre></td></tr></table></figure>
+
+<p>执行结果：</p>
+<figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[INFO] --- <span class="keyword">my</span>-plugin:<span class="number">1.0</span>-SNAPSHOT:sayhi (<span class="keyword">say</span>-hello-to-maven) @ <span class="keyword">my</span>-project ---</span><br><span class="line">[INFO] Hello, Maven!</span><br></pre></td></tr></table></figure>
+
+<p>以上是一个简单的 Maven 插件开发的示例，它只是让你了解插件开发的基本知识，实际开发中可能会更复杂，需要完整地遵循 Maven 插件规范。</p>
+<h1 id="VIII-Maven-与其他工具的结合"><a href="#VIII-Maven-与其他工具的结合" class="headerlink" title="VIII. Maven 与其他工具的结合"></a>VIII. Maven 与其他工具的结合</h1><p>Maven 与版本控制系统<br>Maven 与自动化构建工具的结合<br>使用 Maven 进行 CI&#x2F;CD 流水线</p>
+<h1 id="IX-Maven-的最佳实践"><a href="#IX-Maven-的最佳实践" class="headerlink" title="IX. Maven 的最佳实践"></a>IX. Maven 的最佳实践</h1><p>Maven 项目的规范和标准<br>Maven 的项目管理<br>Maven 的性能优化</p>
+<h1 id="X-结论"><a href="#X-结论" class="headerlink" title="X. 结论"></a>X. 结论</h1><p>总结 Maven 的主要特点和优缺点<br>探讨未来 Maven 可能面临的挑战<br>注：POM（Project Object Model）是 Maven 项目的核心概念，是一种 XML 格式的文件，用来定义项目的基本信息、依赖关系、构建过程等。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://luolong47.github.io/2023/03/15/devtools/maven/" data-id="clfhwn27e0002ksp8bzlkhiof" data-title="maven" class="article-share-link">Teilen</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2023/03/15/securityAndEncryption/%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Neuer</strong>
+      <div class="article-nav-title">
+        
+          内网渗透
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/03/15/programmingLanguages/log4j2/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Älter</strong>
+      <div class="article-nav-title">log4j2</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archiv</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">March 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">letzter Beitrag</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/03/21/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2023/03/16/programmingLanguages/Spring%20Cloud%20Eureka%E7%A4%BA%E4%BE%8B/">Spring Cloud Eureka示例</a>
+          </li>
+        
+          <li>
+            <a href="/2023/03/16/devtools/scoop%20%E7%9A%84%E7%AE%80%E5%8D%95%E6%95%99%E7%A8%8B/">scoop 的简单教程</a>
+          </li>
+        
+          <li>
+            <a href="/2023/03/16/programmingLanguages/npx%20%20%E5%92%8Cnpm%E5%8C%BA%E5%88%AB/">npx  和npm区别</a>
+          </li>
+        
+          <li>
+            <a href="/2023/03/16/devtools/webhook%E6%B5%8B%E8%AF%95/">webhook测试</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 如混<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
