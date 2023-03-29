@@ -4,17 +4,17 @@
   <meta charset="utf-8">
   
   
-  <title>webhook测试 | 如混的博客</title>
+  <title>wsl 导出和导入系统 | 如混的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="webhook 测试？？？">
+  <meta name="description" content="1234wsl --shutdown kali-linux # 停止系统wsl --export kali-linux D:\系统备份\kali-linux.tar.gz # 导出系统wsl --unregister --all # 删除所有系统wsl --import kali-linux D:\kali-linux\ D:\系统备份\kali-linux.tar.gz --preserve-r">
 <meta property="og:type" content="article">
-<meta property="og:title" content="webhook测试">
-<meta property="og:url" content="https://luolong47.github.io/2023/03/16/devtools/webhook%E6%B5%8B%E8%AF%95/index.html">
+<meta property="og:title" content="wsl 导出和导入系统">
+<meta property="og:url" content="https://luolong47.github.io/2023/03/27/systemsAndNetworks/wsl%20%E5%AF%BC%E5%87%BA%E5%92%8C%E5%AF%BC%E5%85%A5%E7%B3%BB%E7%BB%9F/index.html">
 <meta property="og:site_name" content="如混的博客">
-<meta property="og:description" content="webhook 测试？？？">
+<meta property="og:description" content="1234wsl --shutdown kali-linux # 停止系统wsl --export kali-linux D:\系统备份\kali-linux.tar.gz # 导出系统wsl --unregister --all # 删除所有系统wsl --import kali-linux D:\kali-linux\ D:\系统备份\kali-linux.tar.gz --preserve-r">
 <meta property="og:locale">
-<meta property="article:published_time" content="2023-03-15T16:31:33.000Z">
-<meta property="article:modified_time" content="2023-03-29T05:44:54.393Z">
+<meta property="article:published_time" content="2023-03-27T12:09:53.000Z">
+<meta property="article:modified_time" content="2023-03-29T05:45:08.069Z">
 <meta property="article:author" content="如混">
 <meta name="twitter:card" content="summary">
   
@@ -73,10 +73,10 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-devtools/webhook测试" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-systemsAndNetworks/wsl 导出和导入系统" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2023/03/16/devtools/webhook%E6%B5%8B%E8%AF%95/" class="article-date">
-  <time class="dt-published" datetime="2023-03-15T16:31:33.000Z" itemprop="datePublished">2023-03-16</time>
+    <a href="/2023/03/27/systemsAndNetworks/wsl%20%E5%AF%BC%E5%87%BA%E5%92%8C%E5%AF%BC%E5%85%A5%E7%B3%BB%E7%BB%9F/" class="article-date">
+  <time class="dt-published" datetime="2023-03-27T12:09:53.000Z" itemprop="datePublished">2023-03-27</time>
 </a>
     
   </div>
@@ -87,7 +87,7 @@
         
   
     <h1 class="p-name article-title" itemprop="headline name">
-      webhook测试
+      wsl 导出和导入系统
     </h1>
   
 
@@ -95,12 +95,15 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>webhook 测试<br>？<br>？<br>？</p>
+        <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">wsl <span class="literal">--shutdown</span> kali<span class="literal">-linux</span> <span class="comment"># 停止系统</span></span><br><span class="line">wsl <span class="literal">--export</span> kali<span class="literal">-linux</span> D:\系统备份\kali<span class="literal">-linux</span>.tar.gz <span class="comment"># 导出系统</span></span><br><span class="line">wsl <span class="literal">--unregister</span> <span class="literal">--all</span> <span class="comment"># 删除所有系统</span></span><br><span class="line">wsl <span class="literal">--import</span> kali<span class="literal">-linux</span> D:\kali<span class="literal">-linux</span>\ D:\系统备份\kali<span class="literal">-linux</span>.tar.gz <span class="literal">--preserve-rootfs</span> <span class="comment"># 导入系统到D:\kali-linux\，保持kali用户</span></span><br></pre></td></tr></table></figure>
+
+<p>导入 wsl 后，默认登录用户是 root,需要设置 <code>/etc/wsl.conf</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">myUsername=caloewen</span><br><span class="line"><span class="built_in">echo</span> -e <span class="string">&quot;[user]\ndefault=<span class="variable">$myUsername</span>&quot;</span> &gt;&gt; /etc/wsl.conf</span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://luolong47.github.io/2023/03/16/devtools/webhook%E6%B5%8B%E8%AF%95/" data-id="clft9jmpd0004knoo1g1o6o2w" data-title="webhook测试" class="article-share-link">Teilen</a>
+      <a data-url="https://luolong47.github.io/2023/03/27/systemsAndNetworks/wsl%20%E5%AF%BC%E5%87%BA%E5%92%8C%E5%AF%BC%E5%85%A5%E7%B3%BB%E7%BB%9F/" data-id="clft9jmpk000eknoo9jh5hqzp" data-title="wsl 导出和导入系统" class="article-share-link">Teilen</a>
       
       
       
@@ -110,19 +113,19 @@
     
 <nav id="article-nav">
   
-    <a href="/2023/03/16/programmingLanguages/npx%20%20%E5%92%8Cnpm%E5%8C%BA%E5%88%AB/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2023/03/27/systemsAndNetworks/wsl%E5%AE%89%E8%A3%85kali/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Neuer</strong>
       <div class="article-nav-title">
         
-          npx  和npm区别
+          wsl安装kali
         
       </div>
     </a>
   
   
-    <a href="/2023/03/16/devtools/GithubAction%E4%BD%BF%E7%94%A8%E7%BC%93%E5%AD%98/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2023/03/27/systemsAndNetworks/WSL%20%E6%B5%8F%E8%A7%88%E5%99%A8%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA%E4%B8%AD%E6%96%87/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Älter</strong>
-      <div class="article-nav-title">GithubAction使用缓存</div>
+      <div class="article-nav-title">WSL 浏览器无法显示中文</div>
     </a>
   
 </nav>
