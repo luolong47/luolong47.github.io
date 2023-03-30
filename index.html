@@ -74,7 +74,7 @@
     <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2023/03/30/hello-world/" class="article-date">
-  <time class="dt-published" datetime="2023-03-30T06:15:22.440Z" itemprop="datePublished">2023-03-30</time>
+  <time class="dt-published" datetime="2023-03-30T06:30:22.226Z" itemprop="datePublished">2023-03-30</time>
 </a>
     
   </div>
@@ -110,7 +110,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://luolong47.github.io/2023/03/30/hello-world/" data-id="clfuq37l00000kzoxdxpj7abt" data-title="Hello World" class="article-share-link">Teilen</a>
+      <a data-url="https://luolong47.github.io/2023/03/30/hello-world/" data-id="clfuqmff70000k3oy2zc64ea4" data-title="Hello World" class="article-share-link">Teilen</a>
       
       
       
@@ -167,10 +167,12 @@
 <p>强力攻击<br>组合器攻击<br>字典攻击<br>指纹攻击<br>混合攻击<br>掩码攻击<br>排列式攻击<br>基于规则的攻击<br>查表攻击<br>切换式攻击<br>PRINCE 攻击<br>安装大小：80.48 MB<br>如何安装：<code>sudo apt install hashcat</code></p>
 <figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">快速和先进的密码恢复工具。</span><br><span class="line">更多信息：https:<span class="regexp">//</span>hashcat.net/wiki/doku.php?id=hashcat。</span><br><span class="line"></span><br><span class="line"> - 使用默认的hashcat掩码执行暴力攻击（模式<span class="number">3</span>）：</span><br><span class="line">   hashcat --hash-type hash_type_id --attack-mode <span class="number">3</span> hash_value</span><br><span class="line"></span><br><span class="line"> - 用<span class="number">4</span>位数的已知模式进行暴力攻击（模式<span class="number">3</span>）：</span><br><span class="line">   hashcat --hash-type hash_type_id --attack-mode <span class="number">3</span> hash_value <span class="string">&quot;?d?d?d?&quot;</span></span><br><span class="line"></span><br><span class="line"> - 使用所有可打印的ASCII字符中的最多<span class="number">8</span>个字符进行暴力攻击（模式<span class="number">3</span>）：</span><br><span class="line">   hashcat --hash-type hash_type_id --attack-mode <span class="number">3</span> --increment hash_value <span class="string">&quot;?a?a?a?a?a?a?&quot;</span></span><br><span class="line"></span><br><span class="line"> - 使用Kali Linux盒子的RockYou单词表执行字典攻击（模式<span class="number">0</span>）：</span><br><span class="line">   hashcat --hash-type hash_type_id --attack-mode <span class="number">0</span> hash_value /usr/share/wordlists/rockyou.txt</span><br><span class="line"></span><br><span class="line"> - 使用RockYou词表与常见的密码变化进行基于规则的字典攻击（模式<span class="number">0</span>）：</span><br><span class="line">   hashcat --hash-type hash_type_id --attack-mode <span class="number">0</span> --rules-file /usr/share/hashcat/rules/best64.rule hash_value /usr/share/wordlists/rockyou.txt</span><br><span class="line"></span><br><span class="line"> - 使用两个不同的自定义字典中的单词串联，执行组合攻击（模式<span class="number">1</span>）：</span><br><span class="line">   hashcat --hash-type hash_type_id --attack-mode <span class="number">1</span> hash_value /path/to/dictionary1.txt /path/to/dictionary2.txt</span><br><span class="line"></span><br><span class="line"> - 显示已经破解的哈希值的结果：</span><br><span class="line">   hashcat --show hash_value</span><br></pre></td></tr></table></figure>
 
+<h2 id="john"><a href="#john" class="headerlink" title="john"></a>john</h2><figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">密码破解器。</span><br><span class="line">更多信息：https:<span class="regexp">//</span>www.openwall.com/john/。</span><br><span class="line"></span><br><span class="line"> - 破解密码哈希值：</span><br><span class="line">   john path/to/hashes.txt</span><br><span class="line"></span><br><span class="line"> - 显示破解的密码：</span><br><span class="line">   john --show path/to/hashes.txt</span><br><span class="line"></span><br><span class="line"> - 从多个文件中按用户标识符显示用户的破解密码：</span><br><span class="line">   john --show --users=user_ids path/to/hashes* path/to/other/hashes*</span><br><span class="line"></span><br><span class="line"> - 破解密码哈希值，使用自定义的词表：</span><br><span class="line">   john --wordlist=path/to/wordlist.txt path/to/hashes.txt</span><br><span class="line"></span><br><span class="line"> - 列出可用的哈希格式：</span><br><span class="line">   john --list=formats</span><br><span class="line"></span><br><span class="line"> - 破解密码散列，使用特定的散列格式：</span><br><span class="line">   john --<span class="keyword">format</span>=md5crypt path/to/hashes.txt</span><br><span class="line"></span><br><span class="line"> - 破解密码散列值，启用文字处理规则：</span><br><span class="line">   john --rules path/to/hashes.txt</span><br><span class="line"></span><br><span class="line"> - 从状态文件中恢复中断的破解会话，例如mycrack.rec：</span><br><span class="line">   john --restore=path/to/mycrack.rec</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://luolong47.github.io/2023/03/30/systemsAndNetworks/kali%20%20%E5%B7%A5%E5%85%B7%E6%96%87%E6%A1%A3/" data-id="clfuq37lg000dkzoxf71f15b1" data-title="kali  工具文档" class="article-share-link">Teilen</a>
+      <a data-url="https://luolong47.github.io/2023/03/30/systemsAndNetworks/kali%20%20%E5%B7%A5%E5%85%B7%E6%96%87%E6%A1%A3/" data-id="clfuqmffn000dk3oydhfjaj8e" data-title="kali  工具文档" class="article-share-link">Teilen</a>
       
       
       
@@ -227,7 +229,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://luolong47.github.io/2023/03/28/systemsAndNetworks/kali%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/" data-id="clfuq37lh000ekzoxbp4ffbhh" data-title="kali常用软件安装" class="article-share-link">Teilen</a>
+      <a data-url="https://luolong47.github.io/2023/03/28/systemsAndNetworks/kali%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/" data-id="clfuqmffo000ek3oy6wjl6t6r" data-title="kali常用软件安装" class="article-share-link">Teilen</a>
       
       
       
@@ -373,7 +375,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://luolong47.github.io/2023/03/28/securityAndEncryption/%E5%B7%A5%E5%85%B7%E5%A4%87%E5%BF%98/" data-id="clfuq37le000akzoxgfad3n8n" data-title="工具备忘" class="article-share-link">Teilen</a>
+      <a data-url="https://luolong47.github.io/2023/03/28/securityAndEncryption/%E5%B7%A5%E5%85%B7%E5%A4%87%E5%BF%98/" data-id="clfuqmffl000ak3oy6dm2339d" data-title="工具备忘" class="article-share-link">Teilen</a>
       
       
       
@@ -446,7 +448,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://luolong47.github.io/2023/03/27/systemsAndNetworks/wsl%E5%AE%89%E8%A3%85kali/" data-id="clfuq37li000gkzoxebr14fyh" data-title="wsl安装kali" class="article-share-link">Teilen</a>
+      <a data-url="https://luolong47.github.io/2023/03/27/systemsAndNetworks/wsl%E5%AE%89%E8%A3%85kali/" data-id="clfuqmffp000gk3oygxkr48mu" data-title="wsl安装kali" class="article-share-link">Teilen</a>
       
       
       
@@ -488,7 +490,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://luolong47.github.io/2023/03/27/systemsAndNetworks/wsl%20%E5%AF%BC%E5%87%BA%E5%92%8C%E5%AF%BC%E5%85%A5%E7%B3%BB%E7%BB%9F/" data-id="clfuq37li000fkzoxdhog3gw5" data-title="wsl 导出和导入系统" class="article-share-link">Teilen</a>
+      <a data-url="https://luolong47.github.io/2023/03/27/systemsAndNetworks/wsl%20%E5%AF%BC%E5%87%BA%E5%92%8C%E5%AF%BC%E5%85%A5%E7%B3%BB%E7%BB%9F/" data-id="clfuqmffo000fk3oygy2a2l0x" data-title="wsl 导出和导入系统" class="article-share-link">Teilen</a>
       
       
       
@@ -543,7 +545,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://luolong47.github.io/2023/03/27/systemsAndNetworks/WSL%20%E6%B5%8F%E8%A7%88%E5%99%A8%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA%E4%B8%AD%E6%96%87/" data-id="clfuq37lf000ckzoxgnax795z" data-title="WSL 浏览器无法显示中文" class="article-share-link">Teilen</a>
+      <a data-url="https://luolong47.github.io/2023/03/27/systemsAndNetworks/WSL%20%E6%B5%8F%E8%A7%88%E5%99%A8%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA%E4%B8%AD%E6%96%87/" data-id="clfuqmffm000ck3oy6wo13qlv" data-title="WSL 浏览器无法显示中文" class="article-share-link">Teilen</a>
       
       
       
@@ -806,7 +808,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://luolong47.github.io/2023/03/27/securityAndEncryption/%E6%BC%8F%E6%B4%9E%E5%88%86%E7%B1%BB/" data-id="clfuq37lf000bkzoxfx429g2i" data-title="漏洞分类" class="article-share-link">Teilen</a>
+      <a data-url="https://luolong47.github.io/2023/03/27/securityAndEncryption/%E6%BC%8F%E6%B4%9E%E5%88%86%E7%B1%BB/" data-id="clfuqmffm000bk3oy8sndhca3" data-title="漏洞分类" class="article-share-link">Teilen</a>
       
       
       
@@ -880,7 +882,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://luolong47.github.io/2023/03/16/programmingLanguages/Spring%20Cloud%20Eureka%E7%A4%BA%E4%BE%8B/" data-id="clfuq37la0005kzox0icog5i6" data-title="Spring Cloud Eureka示例" class="article-share-link">Teilen</a>
+      <a data-url="https://luolong47.github.io/2023/03/16/programmingLanguages/Spring%20Cloud%20Eureka%E7%A4%BA%E4%BE%8B/" data-id="clfuqmffh0005k3oy5q32hi3j" data-title="Spring Cloud Eureka示例" class="article-share-link">Teilen</a>
       
       
       
@@ -958,7 +960,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://luolong47.github.io/2023/03/16/devtools/scoop%20%E7%9A%84%E7%AE%80%E5%8D%95%E6%95%99%E7%A8%8B/" data-id="clfuq37l80003kzoxeiil4fy3" data-title="scoop 的简单教程" class="article-share-link">Teilen</a>
+      <a data-url="https://luolong47.github.io/2023/03/16/devtools/scoop%20%E7%9A%84%E7%AE%80%E5%8D%95%E6%95%99%E7%A8%8B/" data-id="clfuqmfff0003k3oyafli425f" data-title="scoop 的简单教程" class="article-share-link">Teilen</a>
       
       
       
