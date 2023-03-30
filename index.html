@@ -74,7 +74,7 @@
     <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2023/03/30/hello-world/" class="article-date">
-  <time class="dt-published" datetime="2023-03-30T00:47:43.322Z" itemprop="datePublished">2023-03-30</time>
+  <time class="dt-published" datetime="2023-03-30T01:31:02.038Z" itemprop="datePublished">2023-03-30</time>
 </a>
     
   </div>
@@ -110,7 +110,49 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://luolong47.github.io/2023/03/30/hello-world/" data-id="clfuedow70000kqok6gg08m4e" data-title="Hello World" class="article-share-link">Teilen</a>
+      <a data-url="https://luolong47.github.io/2023/03/30/hello-world/" data-id="clfufxfus0000jan84q86ccny" data-title="Hello World" class="article-share-link">Teilen</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-systemsAndNetworks/kali  工具文档" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/03/30/systemsAndNetworks/kali%20%20%E5%B7%A5%E5%85%B7%E6%96%87%E6%A1%A3/" class="article-date">
+  <time class="dt-published" datetime="2023-03-30T00:47:48.000Z" itemprop="datePublished">2023-03-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/03/30/systemsAndNetworks/kali%20%20%E5%B7%A5%E5%85%B7%E6%96%87%E6%A1%A3/">kali  工具文档</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="hydra"><a href="#hydra" class="headerlink" title="hydra"></a>hydra</h2><p>Hydra 是一个并行的登录破解器，支持众多协议的攻击。它非常快速和灵活，而且新的模块很容易添加。</p>
+<p>这个工具使研究人员和安全顾问有可能展示远程获得未经授权的系统访问是多么容易。</p>
+<p>它支持：Cisco AAA, Cisco auth, Cisco enable, CVS, <strong>FTP</strong>, HTTP(S)-FORM-GET, HTTP(S)-FORM-POST, HTTP(S)-GET, HTTP(S)-HEAD, HTTP-Proxy, ICQ, IMAP, IRC, LDAP, MS-SQL, <strong>MySQL</strong>, NNTP, Oracle Listener, Oracle SID、PC-Anywhere, PC-NFS, POP3, PostgreSQL, RDP, Rexec, Rlogin, Rsh, SIP, SMB(NT), SMTP, SMTP Enum, SNMP v1+v2+v3, SOCKS5, SSH（v1 和 v2）, SSHKEY, Subversion, Teamspeak（TS2）, Telnet, VMware-Auth, VNC 和 XMPP。<br><code>sudo apt install hydra</code></p>
+<figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">在线密码猜测工具。</span><br><span class="line">支持的协议包括FTP、HTTP（S）、SMTP、SNMP、XMPP、SSH等。</span><br><span class="line">更多信息：https:<span class="regexp">//gi</span>thub.com/vanhauser-thc/thc-hydra。</span><br><span class="line"></span><br><span class="line"> - 启动Hydra的向导：</span><br><span class="line">   hydra-wizard</span><br><span class="line"></span><br><span class="line"> - 使用给定的用户名和密码列表来猜测SSH凭证：</span><br><span class="line">   hydra -l username -P path/to/wordlist.txt host_ip ssh</span><br><span class="line"></span><br><span class="line"> - 使用两个特定的用户名和密码列表（<span class="string">&quot;https_post_request &quot;</span>可以像 <span class="string">&quot;username=^USER^&amp;password=^PASS^&quot;</span>）来猜测HTTPS webform凭证：</span><br><span class="line">   hydra -L path/to/usernames.txt -P path/to/wordlist.txt host_ip https-post-form <span class="string">&quot;url_without_host:https_post_request:login_failed_string&quot;</span></span><br><span class="line"></span><br><span class="line"> - 使用用户名和密码列表猜测FTP凭证，指定线程数：</span><br><span class="line">   hydra -L path/to/usernames.txt -P path/to/wordlist.txt -t n_tasks host_ip ftp</span><br><span class="line"></span><br><span class="line"> - 使用一个用户名和一个密码列表来猜测MySQL证书，当找到一个用户名/密码对时退出：</span><br><span class="line">   hydra -l username -P path/to/wordlist.txt -f host_ip mysql</span><br><span class="line"></span><br><span class="line"> - 使用用户名和密码列表猜测 RDP 凭证，显示每次尝试：</span><br><span class="line">   hydra -l username -P path/to/wordlist.txt -V rdp:<span class="regexp">//</span>host_ip</span><br><span class="line"></span><br><span class="line"> - 使用一个用冒号分隔的用户名/密码对的列表，猜测一系列主机上的IMAP凭证：</span><br><span class="line">   hydra -C path/to/username_password_pairs.txt imap:<span class="regexp">//</span>[host_range_cidr]</span><br><span class="line"></span><br><span class="line"> - 使用用户名和密码列表猜测主机列表上的POP3凭证，当找到一个用户名/密码对时退出：</span><br><span class="line">   hydra -L path/to/usernames.txt -P path/to/wordlist.txt -M path/to/hosts.txt -F pop3</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://luolong47.github.io/2023/03/30/systemsAndNetworks/kali%20%20%E5%B7%A5%E5%85%B7%E6%96%87%E6%A1%A3/" data-id="clfufxfv7000djan87y9r3kgf" data-title="kali  工具文档" class="article-share-link">Teilen</a>
       
       
       
@@ -167,7 +209,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://luolong47.github.io/2023/03/28/systemsAndNetworks/kali%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/" data-id="clfuedown000dkqokf3d52y3a" data-title="kali常用软件安装" class="article-share-link">Teilen</a>
+      <a data-url="https://luolong47.github.io/2023/03/28/systemsAndNetworks/kali%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/" data-id="clfufxfv8000ejan82b78agnw" data-title="kali常用软件安装" class="article-share-link">Teilen</a>
       
       
       
@@ -313,7 +355,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://luolong47.github.io/2023/03/28/securityAndEncryption/%E5%B7%A5%E5%85%B7%E5%A4%87%E5%BF%98/" data-id="clfuedowl000akqokgw0xdvl3" data-title="工具备忘" class="article-share-link">Teilen</a>
+      <a data-url="https://luolong47.github.io/2023/03/28/securityAndEncryption/%E5%B7%A5%E5%85%B7%E5%A4%87%E5%BF%98/" data-id="clfufxfv5000ajan8ctcubzl5" data-title="工具备忘" class="article-share-link">Teilen</a>
       
       
       
@@ -386,7 +428,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://luolong47.github.io/2023/03/27/systemsAndNetworks/wsl%E5%AE%89%E8%A3%85kali/" data-id="clfuedowo000fkqok6w1081r6" data-title="wsl安装kali" class="article-share-link">Teilen</a>
+      <a data-url="https://luolong47.github.io/2023/03/27/systemsAndNetworks/wsl%E5%AE%89%E8%A3%85kali/" data-id="clfufxfv9000gjan8hyzw9jyl" data-title="wsl安装kali" class="article-share-link">Teilen</a>
       
       
       
@@ -428,7 +470,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://luolong47.github.io/2023/03/27/systemsAndNetworks/wsl%20%E5%AF%BC%E5%87%BA%E5%92%8C%E5%AF%BC%E5%85%A5%E7%B3%BB%E7%BB%9F/" data-id="clfuedown000ekqokerh9fdba" data-title="wsl 导出和导入系统" class="article-share-link">Teilen</a>
+      <a data-url="https://luolong47.github.io/2023/03/27/systemsAndNetworks/wsl%20%E5%AF%BC%E5%87%BA%E5%92%8C%E5%AF%BC%E5%85%A5%E7%B3%BB%E7%BB%9F/" data-id="clfufxfv9000fjan8boem9jjm" data-title="wsl 导出和导入系统" class="article-share-link">Teilen</a>
       
       
       
@@ -483,7 +525,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://luolong47.github.io/2023/03/27/systemsAndNetworks/WSL%20%E6%B5%8F%E8%A7%88%E5%99%A8%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA%E4%B8%AD%E6%96%87/" data-id="clfuedowm000ckqok8u9l5wgk" data-title="WSL 浏览器无法显示中文" class="article-share-link">Teilen</a>
+      <a data-url="https://luolong47.github.io/2023/03/27/systemsAndNetworks/WSL%20%E6%B5%8F%E8%A7%88%E5%99%A8%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA%E4%B8%AD%E6%96%87/" data-id="clfufxfv7000cjan80fxx4deh" data-title="WSL 浏览器无法显示中文" class="article-share-link">Teilen</a>
       
       
       
@@ -746,7 +788,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://luolong47.github.io/2023/03/27/securityAndEncryption/%E6%BC%8F%E6%B4%9E%E5%88%86%E7%B1%BB/" data-id="clfuedowm000bkqokhdxu77ou" data-title="漏洞分类" class="article-share-link">Teilen</a>
+      <a data-url="https://luolong47.github.io/2023/03/27/securityAndEncryption/%E6%BC%8F%E6%B4%9E%E5%88%86%E7%B1%BB/" data-id="clfufxfv6000bjan8czg0e49d" data-title="漏洞分类" class="article-share-link">Teilen</a>
       
       
       
@@ -820,7 +862,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://luolong47.github.io/2023/03/16/programmingLanguages/Spring%20Cloud%20Eureka%E7%A4%BA%E4%BE%8B/" data-id="clfuedowh0005kqokf8g58xya" data-title="Spring Cloud Eureka示例" class="article-share-link">Teilen</a>
+      <a data-url="https://luolong47.github.io/2023/03/16/programmingLanguages/Spring%20Cloud%20Eureka%E7%A4%BA%E4%BE%8B/" data-id="clfufxfv20005jan8gi4w16t6" data-title="Spring Cloud Eureka示例" class="article-share-link">Teilen</a>
       
       
       
@@ -898,51 +940,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://luolong47.github.io/2023/03/16/devtools/scoop%20%E7%9A%84%E7%AE%80%E5%8D%95%E6%95%99%E7%A8%8B/" data-id="clfuedowf0003kqok0pnm89we" data-title="scoop 的简单教程" class="article-share-link">Teilen</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-programmingLanguages/npx  和npm区别" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/03/16/programmingLanguages/npx%20%20%E5%92%8Cnpm%E5%8C%BA%E5%88%AB/" class="article-date">
-  <time class="dt-published" datetime="2023-03-16T00:16:23.000Z" itemprop="datePublished">2023-03-16</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/03/16/programmingLanguages/npx%20%20%E5%92%8Cnpm%E5%8C%BA%E5%88%AB/">npx  和npm区别</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p><strong>npx</strong> 和 <strong>npm</strong> 都是 Node.js 中的命令行工具，用于管理和安装 JavaScript 包。它们的区别如下：</p>
-<ol>
-<li><strong>npm</strong> 是 Node.js 的官方包管理器，用于安装和管理本地和全局的包。<strong>npx</strong> 是 <strong>npm 5.2+</strong> 版本中包含的一个工具，可以在不全局安装包的情况下运行本地安装的包。</li>
-<li><strong>npm</strong> 安装的包通常需要全局安装或在项目中安装，然后才能在命令行中运行。而 <strong>npx</strong> 可以直接运行不需要安装的包，即使这些包未被安装在本地或全局。</li>
-<li><strong>npx</strong> 会自动查找当前目录下是否存在指定的命令或包，如果存在则直接运行，否则会先安装再运行。 总之，<strong>npx</strong> 可以让我们更方便地运行临时依赖，而无需手动安装它们。</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://luolong47.github.io/2023/03/16/programmingLanguages/npx%20%20%E5%92%8Cnpm%E5%8C%BA%E5%88%AB/" data-id="clfuedowi0007kqok8rfkdgkr" data-title="npx  和npm区别" class="article-share-link">Teilen</a>
+      <a data-url="https://luolong47.github.io/2023/03/16/devtools/scoop%20%E7%9A%84%E7%AE%80%E5%8D%95%E6%95%99%E7%A8%8B/" data-id="clfufxfv00003jan8gpsj24jv" data-title="scoop 的简单教程" class="article-share-link">Teilen</a>
       
       
       
@@ -994,6 +992,10 @@
           </li>
         
           <li>
+            <a href="/2023/03/30/systemsAndNetworks/kali%20%20%E5%B7%A5%E5%85%B7%E6%96%87%E6%A1%A3/">kali  工具文档</a>
+          </li>
+        
+          <li>
             <a href="/2023/03/28/systemsAndNetworks/kali%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/">kali常用软件安装</a>
           </li>
         
@@ -1003,10 +1005,6 @@
         
           <li>
             <a href="/2023/03/27/systemsAndNetworks/wsl%E5%AE%89%E8%A3%85kali/">wsl安装kali</a>
-          </li>
-        
-          <li>
-            <a href="/2023/03/27/systemsAndNetworks/wsl%20%E5%AF%BC%E5%87%BA%E5%92%8C%E5%AF%BC%E5%85%A5%E7%B3%BB%E7%BB%9F/">wsl 导出和导入系统</a>
           </li>
         
       </ul>
