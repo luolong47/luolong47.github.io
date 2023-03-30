@@ -74,7 +74,7 @@
     <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2023/03/30/hello-world/" class="article-date">
-  <time class="dt-published" datetime="2023-03-30T01:31:02.038Z" itemprop="datePublished">2023-03-30</time>
+  <time class="dt-published" datetime="2023-03-30T02:02:14.281Z" itemprop="datePublished">2023-03-30</time>
 </a>
     
   </div>
@@ -110,7 +110,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://luolong47.github.io/2023/03/30/hello-world/" data-id="clfufxfus0000jan84q86ccny" data-title="Hello World" class="article-share-link">Teilen</a>
+      <a data-url="https://luolong47.github.io/2023/03/30/hello-world/" data-id="clfuh1uz00000iyoqdlypfvp9" data-title="Hello World" class="article-share-link">Teilen</a>
       
       
       
@@ -149,10 +149,14 @@
 <p>它支持：Cisco AAA, Cisco auth, Cisco enable, CVS, <strong>FTP</strong>, HTTP(S)-FORM-GET, HTTP(S)-FORM-POST, HTTP(S)-GET, HTTP(S)-HEAD, HTTP-Proxy, ICQ, IMAP, IRC, LDAP, MS-SQL, <strong>MySQL</strong>, NNTP, Oracle Listener, Oracle SID、PC-Anywhere, PC-NFS, POP3, PostgreSQL, RDP, Rexec, Rlogin, Rsh, SIP, SMB(NT), SMTP, SMTP Enum, SNMP v1+v2+v3, SOCKS5, SSH（v1 和 v2）, SSHKEY, Subversion, Teamspeak（TS2）, Telnet, VMware-Auth, VNC 和 XMPP。<br><code>sudo apt install hydra</code></p>
 <figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">在线密码猜测工具。</span><br><span class="line">支持的协议包括FTP、HTTP（S）、SMTP、SNMP、XMPP、SSH等。</span><br><span class="line">更多信息：https:<span class="regexp">//gi</span>thub.com/vanhauser-thc/thc-hydra。</span><br><span class="line"></span><br><span class="line"> - 启动Hydra的向导：</span><br><span class="line">   hydra-wizard</span><br><span class="line"></span><br><span class="line"> - 使用给定的用户名和密码列表来猜测SSH凭证：</span><br><span class="line">   hydra -l username -P path/to/wordlist.txt host_ip ssh</span><br><span class="line"></span><br><span class="line"> - 使用两个特定的用户名和密码列表（<span class="string">&quot;https_post_request &quot;</span>可以像 <span class="string">&quot;username=^USER^&amp;password=^PASS^&quot;</span>）来猜测HTTPS webform凭证：</span><br><span class="line">   hydra -L path/to/usernames.txt -P path/to/wordlist.txt host_ip https-post-form <span class="string">&quot;url_without_host:https_post_request:login_failed_string&quot;</span></span><br><span class="line"></span><br><span class="line"> - 使用用户名和密码列表猜测FTP凭证，指定线程数：</span><br><span class="line">   hydra -L path/to/usernames.txt -P path/to/wordlist.txt -t n_tasks host_ip ftp</span><br><span class="line"></span><br><span class="line"> - 使用一个用户名和一个密码列表来猜测MySQL证书，当找到一个用户名/密码对时退出：</span><br><span class="line">   hydra -l username -P path/to/wordlist.txt -f host_ip mysql</span><br><span class="line"></span><br><span class="line"> - 使用用户名和密码列表猜测 RDP 凭证，显示每次尝试：</span><br><span class="line">   hydra -l username -P path/to/wordlist.txt -V rdp:<span class="regexp">//</span>host_ip</span><br><span class="line"></span><br><span class="line"> - 使用一个用冒号分隔的用户名/密码对的列表，猜测一系列主机上的IMAP凭证：</span><br><span class="line">   hydra -C path/to/username_password_pairs.txt imap:<span class="regexp">//</span>[host_range_cidr]</span><br><span class="line"></span><br><span class="line"> - 使用用户名和密码列表猜测主机列表上的POP3凭证，当找到一个用户名/密码对时退出：</span><br><span class="line">   hydra -L path/to/usernames.txt -P path/to/wordlist.txt -M path/to/hosts.txt -F pop3</span><br></pre></td></tr></table></figure>
 
+<figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">Hydra v9.<span class="number">4</span> (c) <span class="number">2022</span> by van Hauser/THC &amp; David Maciejak - 请不要在军事或特工组织中使用，或用于非法目的（这不具约束力，反正这些***无视法律和道德）。</span><br><span class="line"></span><br><span class="line">语法：Hydra [[[-l LOGIN|-L FILE] [-p PASS|-P FILE]]| [-C FILE]][-e nsr] [-o FILE] [-t TASKS] [-M FILE [-T TASKS]] 。[-w TIME] [-W TIME] [-f] [-s PORT] [-<span class="keyword">x</span> MIN:MAX:CHARSET] [-c TIME] [-ISOuvVd46] [-m MODULE_OPT] [service:<span class="regexp">//s</span>erver[:PORT][<span class="regexp">/OPT] ]</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">选项：</span></span><br><span class="line"><span class="regexp">  -R 恢复先前中止/</span>崩溃的会话</span><br><span class="line">  -I 忽略一个现有的还原文件（不需要等待<span class="number">10</span>秒）。</span><br><span class="line">  -S 执行一个 SSL 连接</span><br><span class="line">  -s PORT 如果服务在一个不同的默认端口上，在这里定义它</span><br><span class="line">  -l LOGIN 或 -L FILE 用LOGIN名登录，或从FILE加载几个登录名</span><br><span class="line">  -p PASS 或 -P FILE 试用密码PASS，或从FILE中加载多个密码</span><br><span class="line">  -<span class="keyword">x</span> MIN:MAX:CHARSET 密码暴力生成，输入<span class="string">&quot;-x -h &quot;</span>获得帮助。</span><br><span class="line">  -<span class="keyword">y</span> 禁止在暴力破解中使用符号，见上文</span><br><span class="line">  -r 对选项-<span class="keyword">x</span>使用非随机的洗牌方法</span><br><span class="line">  -e nsr 尝试 <span class="string">&quot;n &quot;</span>空密码，<span class="string">&quot;s &quot;</span>作为通行证登录和/或 <span class="string">&quot;r &quot;</span>反转登录</span><br><span class="line">  -u 围绕用户，而不是密码进行循环（有效！与-<span class="keyword">x</span>一起隐含）。</span><br><span class="line">  -C FILE 冒号分隔的 <span class="string">&quot;login:pass &quot;</span>格式，代替 -L/P 选项</span><br><span class="line">  -M FILE 要攻击的服务器列表，每行一个条目，<span class="string">&#x27;:&#x27;</span>指定端口</span><br><span class="line">  -o FILE 将找到的登录/密码对写到FILE而不是stdout中。</span><br><span class="line">  -b FORMAT 指定-o FILE的格式：text（默认）、json、jsonv1</span><br><span class="line">  -f / -F 当发现一个登录/密码对时退出(-M: -f per host, -F global)</span><br><span class="line">  -t TASKS运行TASKS每个目标的并行连接数（默认：<span class="number">16</span>）。</span><br><span class="line">  -T TASKS run TASKS 总的并行连接数(对于-M，默认为<span class="number">64</span>)</span><br><span class="line">  -w / -W TIME 响应的等待时间(<span class="number">32</span>) / 每个线程连接之间的时间(<span class="number">0</span>)</span><br><span class="line">  -c TIME 在所有线程中每次登录尝试的等待时间（强制执行-t <span class="number">1</span>）</span><br><span class="line">  -<span class="number">4</span> / -<span class="number">6</span> 使用IPv4（默认）/ IPv6地址（总是放在[]中，也放在-M中）。</span><br><span class="line">  -v / -V / -d verbose模式/显示每次尝试的登录+通过情况/调试模式</span><br><span class="line">  -O 使用旧的SSL v2和v3</span><br><span class="line">  -K不重做失败的尝试（对-M大规模扫描有好处）。</span><br><span class="line">  -<span class="keyword">q</span> 不打印关于连接错误的信息</span><br><span class="line">  -U 服务模块使用细节</span><br><span class="line">  -m 特定于某个模块的OPT选项，信息见-U输出</span><br><span class="line">  -h 更多的命令行选项（完整的帮助）。</span><br><span class="line">  目标服务器：DNS、IP或<span class="number">192.168</span>.<span class="number">0</span>.<span class="number">0</span>/<span class="number">24</span>(这与-M选项相同)</span><br><span class="line">  service 要破解的服务（支持的协议见下文）</span><br><span class="line">  OPT 一些服务模块支持额外的输入（-U为模块帮助）。</span><br><span class="line"></span><br><span class="line">支持的服务：adam650<span class="number">0</span> asterisk cisco cisco-enable cobaltstrike cvs firebird ftp[s] http[s]-&#123;head|get|post&#125; http[s]-&#123;get|post&#125;-form http-proxy http-proxy-urlenum icq imap[s] ircdap2[s] ldap3[-&#123;cram|digest&#125;md5] [s] memcached mongodb mssql mysql nntp oracle-监听器 oracle-sid pcanywhere pcnfs pop3[s] postgres radmin2 rdp redis rexec rlogin rpcap rsh rtsp s7-<span class="number">300</span> sip smb smtp[s] smtp-enum snmp socks5 ssh sshkey svn teamspeak telnet[s] vmauthd vnc xmpp</span><br><span class="line"></span><br><span class="line">Hydra是一个猜测/破解有效登录/密码对的工具。</span><br><span class="line">根据AGPL v3.<span class="number">0</span>许可。最新的版本总是可以在以下网站找到；</span><br><span class="line">https:<span class="regexp">//gi</span>thub.com/vanhauser-thc/thc-hydra</span><br><span class="line">请不要在军事或秘密服务组织中使用，或用于非法目的。</span><br><span class="line">目的。(这是一个愿望，不具约束力--大多数这样的人不关心</span><br><span class="line">法律和道德，并告诉自己他们是好人之一）。</span><br><span class="line">这些服务没有被编入：AFP NCP ORACLE SAPR3 SMB2。</span><br><span class="line"></span><br><span class="line">使用HYDRA_PROXY_HTTP或HYDRA_PROXY环境变量进行代理设置。</span><br><span class="line">例如：% export HYDRA_PROXY=socks5:<span class="regexp">//l</span>:p@127.<span class="number">0</span>.<span class="number">0</span>.<span class="number">1</span>:<span class="number">9150</span> (或：socks4:<span class="regexp">//</span> <span class="keyword">connect</span>:<span class="regexp">//</span>)</span><br><span class="line">     % export HYDRA_PROXY=connect_and_socks_proxylist.txt (最多 <span class="number">64</span> 条)</span><br><span class="line">     % export HYDRA_PROXY_HTTPhttp:<span class="regexp">//l</span>ogin:pass@proxy:<span class="number">8080</span></span><br><span class="line">     % export HYDRA_PROXY_HTTP=proxylist.txt (最多 <span class="number">64</span> 个条目)</span><br><span class="line"></span><br><span class="line">例子：</span><br><span class="line">  hydra -l user -P passlist.txt ftp:<span class="regexp">//</span><span class="number">192.168</span>.<span class="number">0</span>.<span class="number">1</span></span><br><span class="line">  hydra -L userlist.txt -p defaultpw imap:<span class="regexp">//</span><span class="number">192.168</span>.<span class="number">0</span>.<span class="number">1</span>/PLAIN</span><br><span class="line">  hydra -C defaults.txt -<span class="number">6</span> pop3s:<span class="regexp">//</span>[<span class="number">2001</span>:db8::<span class="number">1</span>]：<span class="number">143</span>/TLS：DIGEST-MD5</span><br><span class="line">  hydra -l admin -p password ftp:<span class="regexp">//</span>[<span class="number">192.168</span>.<span class="number">0</span>.<span class="number">0</span>/<span class="number">24</span>]/</span><br><span class="line">  hydra -L logins.txt -P pws.txt -M targets.txt ssh</span><br></pre></td></tr></table></figure>
+
+<p><code>hydra-waizard</code>可以引导运行</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://luolong47.github.io/2023/03/30/systemsAndNetworks/kali%20%20%E5%B7%A5%E5%85%B7%E6%96%87%E6%A1%A3/" data-id="clfufxfv7000djan87y9r3kgf" data-title="kali  工具文档" class="article-share-link">Teilen</a>
+      <a data-url="https://luolong47.github.io/2023/03/30/systemsAndNetworks/kali%20%20%E5%B7%A5%E5%85%B7%E6%96%87%E6%A1%A3/" data-id="clfuh1uzl000diyoq57tbfrug" data-title="kali  工具文档" class="article-share-link">Teilen</a>
       
       
       
@@ -209,7 +213,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://luolong47.github.io/2023/03/28/systemsAndNetworks/kali%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/" data-id="clfufxfv8000ejan82b78agnw" data-title="kali常用软件安装" class="article-share-link">Teilen</a>
+      <a data-url="https://luolong47.github.io/2023/03/28/systemsAndNetworks/kali%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/" data-id="clfuh1uzm000eiyoq13vjemtg" data-title="kali常用软件安装" class="article-share-link">Teilen</a>
       
       
       
@@ -355,7 +359,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://luolong47.github.io/2023/03/28/securityAndEncryption/%E5%B7%A5%E5%85%B7%E5%A4%87%E5%BF%98/" data-id="clfufxfv5000ajan8ctcubzl5" data-title="工具备忘" class="article-share-link">Teilen</a>
+      <a data-url="https://luolong47.github.io/2023/03/28/securityAndEncryption/%E5%B7%A5%E5%85%B7%E5%A4%87%E5%BF%98/" data-id="clfuh1uzi000aiyoq02o58oqj" data-title="工具备忘" class="article-share-link">Teilen</a>
       
       
       
@@ -428,7 +432,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://luolong47.github.io/2023/03/27/systemsAndNetworks/wsl%E5%AE%89%E8%A3%85kali/" data-id="clfufxfv9000gjan8hyzw9jyl" data-title="wsl安装kali" class="article-share-link">Teilen</a>
+      <a data-url="https://luolong47.github.io/2023/03/27/systemsAndNetworks/wsl%E5%AE%89%E8%A3%85kali/" data-id="clfuh1uzm000fiyoqf61r3css" data-title="wsl安装kali" class="article-share-link">Teilen</a>
       
       
       
@@ -470,7 +474,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://luolong47.github.io/2023/03/27/systemsAndNetworks/wsl%20%E5%AF%BC%E5%87%BA%E5%92%8C%E5%AF%BC%E5%85%A5%E7%B3%BB%E7%BB%9F/" data-id="clfufxfv9000fjan8boem9jjm" data-title="wsl 导出和导入系统" class="article-share-link">Teilen</a>
+      <a data-url="https://luolong47.github.io/2023/03/27/systemsAndNetworks/wsl%20%E5%AF%BC%E5%87%BA%E5%92%8C%E5%AF%BC%E5%85%A5%E7%B3%BB%E7%BB%9F/" data-id="clfuh1uzn000giyoqbpyu3e7q" data-title="wsl 导出和导入系统" class="article-share-link">Teilen</a>
       
       
       
@@ -525,7 +529,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://luolong47.github.io/2023/03/27/systemsAndNetworks/WSL%20%E6%B5%8F%E8%A7%88%E5%99%A8%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA%E4%B8%AD%E6%96%87/" data-id="clfufxfv7000cjan80fxx4deh" data-title="WSL 浏览器无法显示中文" class="article-share-link">Teilen</a>
+      <a data-url="https://luolong47.github.io/2023/03/27/systemsAndNetworks/WSL%20%E6%B5%8F%E8%A7%88%E5%99%A8%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA%E4%B8%AD%E6%96%87/" data-id="clfuh1uzk000ciyoqhl1q71qv" data-title="WSL 浏览器无法显示中文" class="article-share-link">Teilen</a>
       
       
       
@@ -788,7 +792,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://luolong47.github.io/2023/03/27/securityAndEncryption/%E6%BC%8F%E6%B4%9E%E5%88%86%E7%B1%BB/" data-id="clfufxfv6000bjan8czg0e49d" data-title="漏洞分类" class="article-share-link">Teilen</a>
+      <a data-url="https://luolong47.github.io/2023/03/27/securityAndEncryption/%E6%BC%8F%E6%B4%9E%E5%88%86%E7%B1%BB/" data-id="clfuh1uzj000biyoqd8x24236" data-title="漏洞分类" class="article-share-link">Teilen</a>
       
       
       
@@ -862,7 +866,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://luolong47.github.io/2023/03/16/programmingLanguages/Spring%20Cloud%20Eureka%E7%A4%BA%E4%BE%8B/" data-id="clfufxfv20005jan8gi4w16t6" data-title="Spring Cloud Eureka示例" class="article-share-link">Teilen</a>
+      <a data-url="https://luolong47.github.io/2023/03/16/programmingLanguages/Spring%20Cloud%20Eureka%E7%A4%BA%E4%BE%8B/" data-id="clfuh1uzd0005iyoqgdbl5uap" data-title="Spring Cloud Eureka示例" class="article-share-link">Teilen</a>
       
       
       
@@ -940,7 +944,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://luolong47.github.io/2023/03/16/devtools/scoop%20%E7%9A%84%E7%AE%80%E5%8D%95%E6%95%99%E7%A8%8B/" data-id="clfufxfv00003jan8gpsj24jv" data-title="scoop 的简单教程" class="article-share-link">Teilen</a>
+      <a data-url="https://luolong47.github.io/2023/03/16/devtools/scoop%20%E7%9A%84%E7%AE%80%E5%8D%95%E6%95%99%E7%A8%8B/" data-id="clfuh1uzb0003iyoqcerc4n9y" data-title="scoop 的简单教程" class="article-share-link">Teilen</a>
       
       
       
