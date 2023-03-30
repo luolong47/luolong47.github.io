@@ -74,7 +74,7 @@
     <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2023/03/30/hello-world/" class="article-date">
-  <time class="dt-published" datetime="2023-03-30T06:30:22.226Z" itemprop="datePublished">2023-03-30</time>
+  <time class="dt-published" datetime="2023-03-30T07:39:31.244Z" itemprop="datePublished">2023-03-30</time>
 </a>
     
   </div>
@@ -110,7 +110,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://luolong47.github.io/2023/03/30/hello-world/" data-id="clfuqmff70000k3oy2zc64ea4" data-title="Hello World" class="article-share-link">Teilen</a>
+      <a data-url="https://luolong47.github.io/2023/03/30/hello-world/" data-id="clfut38uk0000j0oxa1qgebqx" data-title="Hello World" class="article-share-link">Teilen</a>
       
       
       
@@ -169,10 +169,13 @@
 
 <h2 id="john"><a href="#john" class="headerlink" title="john"></a>john</h2><figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">密码破解器。</span><br><span class="line">更多信息：https:<span class="regexp">//</span>www.openwall.com/john/。</span><br><span class="line"></span><br><span class="line"> - 破解密码哈希值：</span><br><span class="line">   john path/to/hashes.txt</span><br><span class="line"></span><br><span class="line"> - 显示破解的密码：</span><br><span class="line">   john --show path/to/hashes.txt</span><br><span class="line"></span><br><span class="line"> - 从多个文件中按用户标识符显示用户的破解密码：</span><br><span class="line">   john --show --users=user_ids path/to/hashes* path/to/other/hashes*</span><br><span class="line"></span><br><span class="line"> - 破解密码哈希值，使用自定义的词表：</span><br><span class="line">   john --wordlist=path/to/wordlist.txt path/to/hashes.txt</span><br><span class="line"></span><br><span class="line"> - 列出可用的哈希格式：</span><br><span class="line">   john --list=formats</span><br><span class="line"></span><br><span class="line"> - 破解密码散列，使用特定的散列格式：</span><br><span class="line">   john --<span class="keyword">format</span>=md5crypt path/to/hashes.txt</span><br><span class="line"></span><br><span class="line"> - 破解密码散列值，启用文字处理规则：</span><br><span class="line">   john --rules path/to/hashes.txt</span><br><span class="line"></span><br><span class="line"> - 从状态文件中恢复中断的破解会话，例如mycrack.rec：</span><br><span class="line">   john --restore=path/to/mycrack.rec</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
+<h2 id="jsql"><a href="#jsql" class="headerlink" title="jsql"></a>jsql</h2><p>ffuf</p>
+<figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">更多信息：https:<span class="regexp">//gi</span>thub.com/ffuf/ffuf。</span><br><span class="line"></span><br><span class="line"> - 使用目标[u]rl上的[w]ordlist发现目录，有[c]lorized和[v]erbose输出：</span><br><span class="line">   ffuf -w path/to/wordlist -u https:<span class="regexp">//</span>target/FUZZ -c -v</span><br><span class="line"></span><br><span class="line"> - 用目标网站上的主机文件对host-[H]eaders进行模糊处理，并[m]atch HTTP <span class="number">200</span>[c]ode响应：</span><br><span class="line">   ffuf -w hosts.txt -u https:<span class="regexp">//</span>example.org -H <span class="string">&quot;Host：FUZZ&quot;</span> -mc <span class="number">200</span></span><br><span class="line"></span><br><span class="line"> - 使用目标网站上的[w]ordlist发现目录，单个作业时间最长为<span class="number">60</span>秒，递归发现深度为<span class="number">2</span>级：</span><br><span class="line">   ffuf -w path/to/wordlist -u https:<span class="regexp">//</span>target/FUZZ -maxtime-job <span class="number">60</span> -recursion -recursion-depth <span class="number">2</span></span><br><span class="line"></span><br><span class="line"> - 对目标网站的GET参数进行模糊处理，[f]ilter出来的信息[s]ize响应为<span class="number">4242</span>字节：</span><br><span class="line">   ffuf -w path/to/param_names.txt -u https:<span class="regexp">//</span>target/script.php?FUZZ=test_value -fs <span class="number">4242</span></span><br><span class="line"></span><br><span class="line"> - 对目标网站的密码POST方法进行模糊处理，找出HTTP响应[c]ode <span class="number">401</span>：</span><br><span class="line">   ffuf -w path/to/postdata.txt -X POST -d <span class="string">&quot;username=admin\&amp;password=FUZZ&quot;</span> -u https:<span class="regexp">//</span>target/login.php -fc <span class="number">401</span></span><br><span class="line"></span><br><span class="line"> - 使用目标网站上的子域列表发现子域：</span><br><span class="line">   ffuf -w subdomains.txt -u https:<span class="regexp">//</span>website.com -H <span class="string">&quot;Host：FUZZ.website.com&quot;</span></span><br></pre></td></tr></table></figure>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://luolong47.github.io/2023/03/30/systemsAndNetworks/kali%20%20%E5%B7%A5%E5%85%B7%E6%96%87%E6%A1%A3/" data-id="clfuqmffn000dk3oydhfjaj8e" data-title="kali  工具文档" class="article-share-link">Teilen</a>
+      <a data-url="https://luolong47.github.io/2023/03/30/systemsAndNetworks/kali%20%20%E5%B7%A5%E5%85%B7%E6%96%87%E6%A1%A3/" data-id="clfut38uz000dj0oxg9bs0l5f" data-title="kali  工具文档" class="article-share-link">Teilen</a>
       
       
       
@@ -229,7 +232,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://luolong47.github.io/2023/03/28/systemsAndNetworks/kali%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/" data-id="clfuqmffo000ek3oy6wjl6t6r" data-title="kali常用软件安装" class="article-share-link">Teilen</a>
+      <a data-url="https://luolong47.github.io/2023/03/28/systemsAndNetworks/kali%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/" data-id="clfut38v0000ej0oxcqbn43ys" data-title="kali常用软件安装" class="article-share-link">Teilen</a>
       
       
       
@@ -375,7 +378,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://luolong47.github.io/2023/03/28/securityAndEncryption/%E5%B7%A5%E5%85%B7%E5%A4%87%E5%BF%98/" data-id="clfuqmffl000ak3oy6dm2339d" data-title="工具备忘" class="article-share-link">Teilen</a>
+      <a data-url="https://luolong47.github.io/2023/03/28/securityAndEncryption/%E5%B7%A5%E5%85%B7%E5%A4%87%E5%BF%98/" data-id="clfut38uy000aj0oxeltwaqjs" data-title="工具备忘" class="article-share-link">Teilen</a>
       
       
       
@@ -448,7 +451,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://luolong47.github.io/2023/03/27/systemsAndNetworks/wsl%E5%AE%89%E8%A3%85kali/" data-id="clfuqmffp000gk3oygxkr48mu" data-title="wsl安装kali" class="article-share-link">Teilen</a>
+      <a data-url="https://luolong47.github.io/2023/03/27/systemsAndNetworks/wsl%E5%AE%89%E8%A3%85kali/" data-id="clfut38v1000gj0oxgwh9e3oh" data-title="wsl安装kali" class="article-share-link">Teilen</a>
       
       
       
@@ -490,7 +493,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://luolong47.github.io/2023/03/27/systemsAndNetworks/wsl%20%E5%AF%BC%E5%87%BA%E5%92%8C%E5%AF%BC%E5%85%A5%E7%B3%BB%E7%BB%9F/" data-id="clfuqmffo000fk3oygy2a2l0x" data-title="wsl 导出和导入系统" class="article-share-link">Teilen</a>
+      <a data-url="https://luolong47.github.io/2023/03/27/systemsAndNetworks/wsl%20%E5%AF%BC%E5%87%BA%E5%92%8C%E5%AF%BC%E5%85%A5%E7%B3%BB%E7%BB%9F/" data-id="clfut38v1000fj0ox9263bhpd" data-title="wsl 导出和导入系统" class="article-share-link">Teilen</a>
       
       
       
@@ -545,7 +548,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://luolong47.github.io/2023/03/27/systemsAndNetworks/WSL%20%E6%B5%8F%E8%A7%88%E5%99%A8%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA%E4%B8%AD%E6%96%87/" data-id="clfuqmffm000ck3oy6wo13qlv" data-title="WSL 浏览器无法显示中文" class="article-share-link">Teilen</a>
+      <a data-url="https://luolong47.github.io/2023/03/27/systemsAndNetworks/WSL%20%E6%B5%8F%E8%A7%88%E5%99%A8%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA%E4%B8%AD%E6%96%87/" data-id="clfut38uz000cj0ox86tl6ixy" data-title="WSL 浏览器无法显示中文" class="article-share-link">Teilen</a>
       
       
       
@@ -808,7 +811,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://luolong47.github.io/2023/03/27/securityAndEncryption/%E6%BC%8F%E6%B4%9E%E5%88%86%E7%B1%BB/" data-id="clfuqmffm000bk3oy8sndhca3" data-title="漏洞分类" class="article-share-link">Teilen</a>
+      <a data-url="https://luolong47.github.io/2023/03/27/securityAndEncryption/%E6%BC%8F%E6%B4%9E%E5%88%86%E7%B1%BB/" data-id="clfut38uy000bj0oxhkb13csq" data-title="漏洞分类" class="article-share-link">Teilen</a>
       
       
       
@@ -882,7 +885,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://luolong47.github.io/2023/03/16/programmingLanguages/Spring%20Cloud%20Eureka%E7%A4%BA%E4%BE%8B/" data-id="clfuqmffh0005k3oy5q32hi3j" data-title="Spring Cloud Eureka示例" class="article-share-link">Teilen</a>
+      <a data-url="https://luolong47.github.io/2023/03/16/programmingLanguages/Spring%20Cloud%20Eureka%E7%A4%BA%E4%BE%8B/" data-id="clfut38uu0005j0oxhpkfewtg" data-title="Spring Cloud Eureka示例" class="article-share-link">Teilen</a>
       
       
       
@@ -960,7 +963,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://luolong47.github.io/2023/03/16/devtools/scoop%20%E7%9A%84%E7%AE%80%E5%8D%95%E6%95%99%E7%A8%8B/" data-id="clfuqmfff0003k3oyafli425f" data-title="scoop 的简单教程" class="article-share-link">Teilen</a>
+      <a data-url="https://luolong47.github.io/2023/03/16/devtools/scoop%20%E7%9A%84%E7%AE%80%E5%8D%95%E6%95%99%E7%A8%8B/" data-id="clfut38us0003j0ox3bw39ukx" data-title="scoop 的简单教程" class="article-share-link">Teilen</a>
       
       
       
