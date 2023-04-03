@@ -73,8 +73,8 @@
   
     <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2023/03/30/hello-world/" class="article-date">
-  <time class="dt-published" datetime="2023-03-30T07:39:31.244Z" itemprop="datePublished">2023-03-30</time>
+    <a href="/2023/04/03/hello-world/" class="article-date">
+  <time class="dt-published" datetime="2023-04-03T05:29:30.457Z" itemprop="datePublished">2023-04-03</time>
 </a>
     
   </div>
@@ -85,7 +85,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/03/30/hello-world/">Hello World</a>
+      <a class="p-name article-title" href="/2023/04/03/hello-world/">Hello World</a>
     </h1>
   
 
@@ -110,7 +110,124 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://luolong47.github.io/2023/03/30/hello-world/" data-id="clfut38uk0000j0oxa1qgebqx" data-title="Hello World" class="article-share-link">Teilen</a>
+      <a data-url="https://luolong47.github.io/2023/04/03/hello-world/" data-id="clg0e7iyp0000jvot961p43h2" data-title="Hello World" class="article-share-link">Teilen</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-systemsAndNetworks/用户配置文件迁移到其他盘符" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/04/03/systemsAndNetworks/%E7%94%A8%E6%88%B7%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%BF%81%E7%A7%BB%E5%88%B0%E5%85%B6%E4%BB%96%E7%9B%98%E7%AC%A6/" class="article-date">
+  <time class="dt-published" datetime="2023-04-03T05:26:43.000Z" itemprop="datePublished">2023-04-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/04/03/systemsAndNetworks/%E7%94%A8%E6%88%B7%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%BF%81%E7%A7%BB%E5%88%B0%E5%85%B6%E4%BB%96%E7%9B%98%E7%AC%A6/">用户配置文件迁移到其他盘符</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>要将 Windows 11 的用户配置文件迁移到其他盘符，您可以按照以下步骤操作：</p>
+<ol>
+<li>首先，创建一个新的用户配置文件目录。您可以选择任何一个您想要将配置文件移动到的目录。</li>
+<li>登录您的 Windows 11 账户并打开文件资源管理器。</li>
+<li>在左侧的导航窗格中，右键单击“此电脑”并选择“属性”。</li>
+<li>在新窗口中，选择“高级系统设置”。</li>
+<li>在弹出的“系统属性”窗口中，选择“用户配置文件设置”按钮。</li>
+<li>在“用户配置文件”窗口中，选择您想要移动的用户配置文件，然后点击“移动”按钮。</li>
+<li>在弹出的“浏览文件夹”窗口中，选择您在第一步中创建的新目录，然后点击“确定”按钮。</li>
+<li>在“用户配置文件”窗口中，确认您已选择了正确的配置文件和目录，然后点击“确定”按钮。</li>
+<li>您会被要求将现有文件夹中的所有文件复制到新的文件夹中。选择“是”以继续。</li>
+<li>Windows 11 将开始将您的用户配置文件迁移到新目录。这可能需要一些时间，具体取决于您的计算机性能和用户配置文件的大小。</li>
+<li>完成后，重新启动计算机以确保所有更改生效。</li>
+</ol>
+<p>请注意，这种操作涉及到系统文件，因此请确保您了解操作过程中的风险，并在执行之前备份您的数据。</p>
+<hr>
+<p>如果在第 6 步中，您没有看到“移动”按钮，则您需要在注册表编辑器中启用此功能。请按照以下步骤操作：</p>
+<ol>
+<li>按下 Win + R 组合键打开“运行”对话框。</li>
+<li>在“运行”对话框中键入“regedit”，然后按 Enter 键打开注册表编辑器。</li>
+<li>在注册表编辑器中，导航到以下路径： <code>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\ProfileList </code></li>
+<li>在“ProfileList”文件夹下找到您要移动的用户配置文件的 SID（安全标识符）。</li>
+<li>右键单击该 SID，选择“修改”。</li>
+<li>在“修改值数据”对话框中，找到“ProfileImagePath”项，并将其值更改为您要移动配置文件的新路径（例如：D:\新路径\用户名）。</li>
+<li>确认修改后，关闭注册表编辑器。</li>
+<li>重新启动计算机以使更改生效。</li>
+</ol>
+<p>现在，您的用户配置文件已被迁移到新路径。</p>
+<hr>
+<p>要找到您要移动的用户配置文件的 SID，请按照以下步骤操作：</p>
+<ol>
+<li>按下 Win + R 组合键打开“运行”对话框。</li>
+<li>在“运行”对话框中键入“cmd”，然后按 Enter 键打开命令提示符。</li>
+<li>在命令提示符中键入以下命令，并按 Enter 键执行：</li>
+</ol>
+<figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wmic useraccount where name=<span class="string">&#x27;用户名&#x27;</span> get sid</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>执行命令后，您将看到该用户的 SID。</li>
+</ol>
+<p>现在，您可以在注册表编辑器中找到该 SID，并按照前面的步骤移动您的用户配置文件。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://luolong47.github.io/2023/04/03/systemsAndNetworks/%E7%94%A8%E6%88%B7%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%BF%81%E7%A7%BB%E5%88%B0%E5%85%B6%E4%BB%96%E7%9B%98%E7%AC%A6/" data-id="clg0e7iz7000ijvoth3gxeer3" data-title="用户配置文件迁移到其他盘符" class="article-share-link">Teilen</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-securityAndEncryption/SQL注入专题" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/03/31/securityAndEncryption/SQL%E6%B3%A8%E5%85%A5%E4%B8%93%E9%A2%98/" class="article-date">
+  <time class="dt-published" datetime="2023-03-31T06:36:21.000Z" itemprop="datePublished">2023-03-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/03/31/securityAndEncryption/SQL%E6%B3%A8%E5%85%A5%E4%B8%93%E9%A2%98/">SQL注入专题</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h1><h1 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h1><h1 id="脚本"><a href="#脚本" class="headerlink" title="脚本"></a>脚本</h1>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://luolong47.github.io/2023/03/31/securityAndEncryption/SQL%E6%B3%A8%E5%85%A5%E4%B8%93%E9%A2%98/" data-id="clg0e7iz10008jvotcar5gn4b" data-title="SQL注入专题" class="article-share-link">Teilen</a>
       
       
       
@@ -175,7 +292,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://luolong47.github.io/2023/03/30/systemsAndNetworks/kali%20%20%E5%B7%A5%E5%85%B7%E6%96%87%E6%A1%A3/" data-id="clfut38uz000dj0oxg9bs0l5f" data-title="kali  工具文档" class="article-share-link">Teilen</a>
+      <a data-url="https://luolong47.github.io/2023/03/30/systemsAndNetworks/kali%20%20%E5%B7%A5%E5%85%B7%E6%96%87%E6%A1%A3/" data-id="clg0e7iz5000ejvotdn4fbxg4" data-title="kali  工具文档" class="article-share-link">Teilen</a>
       
       
       
@@ -232,7 +349,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://luolong47.github.io/2023/03/28/systemsAndNetworks/kali%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/" data-id="clfut38v0000ej0oxcqbn43ys" data-title="kali常用软件安装" class="article-share-link">Teilen</a>
+      <a data-url="https://luolong47.github.io/2023/03/28/systemsAndNetworks/kali%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/" data-id="clg0e7iz5000fjvot2lv2ab3b" data-title="kali常用软件安装" class="article-share-link">Teilen</a>
       
       
       
@@ -378,7 +495,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://luolong47.github.io/2023/03/28/securityAndEncryption/%E5%B7%A5%E5%85%B7%E5%A4%87%E5%BF%98/" data-id="clfut38uy000aj0oxeltwaqjs" data-title="工具备忘" class="article-share-link">Teilen</a>
+      <a data-url="https://luolong47.github.io/2023/03/28/securityAndEncryption/%E5%B7%A5%E5%85%B7%E5%A4%87%E5%BF%98/" data-id="clg0e7iz3000bjvotbi078f8t" data-title="工具备忘" class="article-share-link">Teilen</a>
       
       
       
@@ -451,7 +568,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://luolong47.github.io/2023/03/27/systemsAndNetworks/wsl%E5%AE%89%E8%A3%85kali/" data-id="clfut38v1000gj0oxgwh9e3oh" data-title="wsl安装kali" class="article-share-link">Teilen</a>
+      <a data-url="https://luolong47.github.io/2023/03/27/systemsAndNetworks/wsl%E5%AE%89%E8%A3%85kali/" data-id="clg0e7iz6000hjvothvgkfnqg" data-title="wsl安装kali" class="article-share-link">Teilen</a>
       
       
       
@@ -493,7 +610,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://luolong47.github.io/2023/03/27/systemsAndNetworks/wsl%20%E5%AF%BC%E5%87%BA%E5%92%8C%E5%AF%BC%E5%85%A5%E7%B3%BB%E7%BB%9F/" data-id="clfut38v1000fj0ox9263bhpd" data-title="wsl 导出和导入系统" class="article-share-link">Teilen</a>
+      <a data-url="https://luolong47.github.io/2023/03/27/systemsAndNetworks/wsl%20%E5%AF%BC%E5%87%BA%E5%92%8C%E5%AF%BC%E5%85%A5%E7%B3%BB%E7%BB%9F/" data-id="clg0e7iz6000gjvot02u07voe" data-title="wsl 导出和导入系统" class="article-share-link">Teilen</a>
       
       
       
@@ -548,7 +665,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://luolong47.github.io/2023/03/27/systemsAndNetworks/WSL%20%E6%B5%8F%E8%A7%88%E5%99%A8%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA%E4%B8%AD%E6%96%87/" data-id="clfut38uz000cj0ox86tl6ixy" data-title="WSL 浏览器无法显示中文" class="article-share-link">Teilen</a>
+      <a data-url="https://luolong47.github.io/2023/03/27/systemsAndNetworks/WSL%20%E6%B5%8F%E8%A7%88%E5%99%A8%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA%E4%B8%AD%E6%96%87/" data-id="clg0e7iz4000djvotd3uahc05" data-title="WSL 浏览器无法显示中文" class="article-share-link">Teilen</a>
       
       
       
@@ -811,159 +928,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://luolong47.github.io/2023/03/27/securityAndEncryption/%E6%BC%8F%E6%B4%9E%E5%88%86%E7%B1%BB/" data-id="clfut38uy000bj0oxhkb13csq" data-title="漏洞分类" class="article-share-link">Teilen</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-programmingLanguages/Spring Cloud Eureka示例" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/03/16/programmingLanguages/Spring%20Cloud%20Eureka%E7%A4%BA%E4%BE%8B/" class="article-date">
-  <time class="dt-published" datetime="2023-03-16T02:22:27.000Z" itemprop="datePublished">2023-03-16</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/03/16/programmingLanguages/Spring%20Cloud%20Eureka%E7%A4%BA%E4%BE%8B/">Spring Cloud Eureka示例</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>以下是一个简单的 Spring Cloud Eureka 示例代码：</p>
-<ol>
-<li>引入依赖</li>
-</ol>
-<p>在 pom.xml 文件中添加以下依赖：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.cloud<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-cloud-starter-netflix-eureka-server<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>配置 Eureka Server</li>
-</ol>
-<p>在 application.yml 文件中添加以下配置：</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">server:</span></span><br><span class="line">  <span class="attr">port:</span> <span class="number">8761</span></span><br><span class="line"></span><br><span class="line"><span class="attr">eureka:</span></span><br><span class="line">  <span class="attr">instance:</span></span><br><span class="line">    <span class="attr">hostname:</span> <span class="string">localhost</span></span><br><span class="line">  <span class="attr">client:</span></span><br><span class="line">    <span class="attr">register-with-eureka:</span> <span class="literal">false</span></span><br><span class="line">    <span class="attr">fetch-registry:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
-
-<ol start="3">
-<li>启动 Eureka Server</li>
-</ol>
-<p>创建一个 Spring Boot 应用程序，并添加@EnableEurekaServer 注解，启动 Eureka Server：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="meta">@EnableEurekaServer</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">EurekaServerApplication</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        SpringApplication.run(EurekaServerApplication.class, args);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ol start="4">
-<li>注册服务</li>
-</ol>
-<p>在服务提供者的 application.yml 文件中添加以下配置：</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spring:</span></span><br><span class="line">  <span class="attr">application:</span></span><br><span class="line">    <span class="attr">name:</span> <span class="string">service-provider</span></span><br><span class="line"></span><br><span class="line"><span class="attr">eureka:</span></span><br><span class="line">  <span class="attr">client:</span></span><br><span class="line">    <span class="attr">service-url:</span></span><br><span class="line">      <span class="attr">defaultZone:</span> <span class="string">http://localhost:8761/eureka/</span></span><br></pre></td></tr></table></figure>
-
-<p>在服务提供者的启动类上添加@EnableDiscoveryClient 注解，将服务注册到 Eureka Server：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="meta">@EnableDiscoveryClient</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ServiceProviderApplication</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        SpringApplication.run(ServiceProviderApplication.class, args);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ol start="5">
-<li>调用服务</li>
-</ol>
-<p>在服务消费者的 application.yml 文件中添加以下配置：</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spring:</span></span><br><span class="line">  <span class="attr">application:</span></span><br><span class="line">    <span class="attr">name:</span> <span class="string">service-consumer</span></span><br><span class="line"></span><br><span class="line"><span class="attr">eureka:</span></span><br><span class="line">  <span class="attr">client:</span></span><br><span class="line">    <span class="attr">service-url:</span></span><br><span class="line">      <span class="attr">defaultZone:</span> <span class="string">http://localhost:8761/eureka/</span></span><br></pre></td></tr></table></figure>
-
-<p>在服务消费者中使用 RestTemplate 调用服务提供者：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ConsumerController</span> &#123;</span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> RestTemplate restTemplate;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@GetMapping(&quot;/hello&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">hello</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="type">String</span> <span class="variable">url</span> <span class="operator">=</span> <span class="string">&quot;http://service-provider/hello&quot;</span>;</span><br><span class="line">        <span class="keyword">return</span> restTemplate.getForObject(url, String.class);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://luolong47.github.io/2023/03/16/programmingLanguages/Spring%20Cloud%20Eureka%E7%A4%BA%E4%BE%8B/" data-id="clfut38uu0005j0oxhpkfewtg" data-title="Spring Cloud Eureka示例" class="article-share-link">Teilen</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-devtools/scoop 的简单教程" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/03/16/devtools/scoop%20%E7%9A%84%E7%AE%80%E5%8D%95%E6%95%99%E7%A8%8B/" class="article-date">
-  <time class="dt-published" datetime="2023-03-16T00:24:16.000Z" itemprop="datePublished">2023-03-16</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/03/16/devtools/scoop%20%E7%9A%84%E7%AE%80%E5%8D%95%E6%95%99%E7%A8%8B/">scoop 的简单教程</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>Scoop 是一个 Windows 下的命令行安装程序，它可以帮助您快速安装和管理各种软件包。以下是 scoop 的基本使用方法：</p>
-<ol>
-<li>安装 scoop</li>
-</ol>
-<p>在命令行中输入以下命令：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iex (new-object net.webclient).downloadstring(&#x27;https://get.scoop.sh&#x27;)</span><br></pre></td></tr></table></figure>
-
-<p>这将下载并安装 scoop。</p>
-<ol start="2">
-<li>安装软件包</li>
-</ol>
-<p>在命令行中输入以下命令：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop install &lt;package&gt;</span><br></pre></td></tr></table></figure>
-
-<p>其中， 是您要安装的软件包的名称。例如，要安装 Git，您可以输入以下命令：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop install git</span><br></pre></td></tr></table></figure>
-
-<ol start="3">
-<li>升级软件包</li>
-</ol>
-<p>在命令行中输入以下命令：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop update</span><br></pre></td></tr></table></figure>
-
-<p>这将更新所有已安装的软件包。</p>
-<ol start="4">
-<li>卸载软件包</li>
-</ol>
-<p>在命令行中输入以下命令：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop uninstall &lt;package&gt;</span><br></pre></td></tr></table></figure>
-
-<p>其中， 是您要卸载的软件包的名称。例如，要卸载 Git，您可以输入以下命令：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop uninstall git</span><br></pre></td></tr></table></figure>
-
-<ol start="5">
-<li>查看已安装的软件包</li>
-</ol>
-<p>在命令行中输入以下命令：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop list</span><br></pre></td></tr></table></figure>
-
-<p>这将列出所有已安装的软件包。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://luolong47.github.io/2023/03/16/devtools/scoop%20%E7%9A%84%E7%AE%80%E5%8D%95%E6%95%99%E7%A8%8B/" data-id="clfut38us0003j0ox3bw39ukx" data-title="scoop 的简单教程" class="article-share-link">Teilen</a>
+      <a data-url="https://luolong47.github.io/2023/03/27/securityAndEncryption/%E6%BC%8F%E6%B4%9E%E5%88%86%E7%B1%BB/" data-id="clg0e7iz3000cjvot7qwkbq17" data-title="漏洞分类" class="article-share-link">Teilen</a>
       
       
       
@@ -998,7 +963,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archiv</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">March 2023</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/04/">April 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">March 2023</a></li></ul>
     </div>
   </div>
 
@@ -1011,7 +976,15 @@
       <ul>
         
           <li>
-            <a href="/2023/03/30/hello-world/">Hello World</a>
+            <a href="/2023/04/03/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2023/04/03/systemsAndNetworks/%E7%94%A8%E6%88%B7%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%BF%81%E7%A7%BB%E5%88%B0%E5%85%B6%E4%BB%96%E7%9B%98%E7%AC%A6/">用户配置文件迁移到其他盘符</a>
+          </li>
+        
+          <li>
+            <a href="/2023/03/31/securityAndEncryption/SQL%E6%B3%A8%E5%85%A5%E4%B8%93%E9%A2%98/">SQL注入专题</a>
           </li>
         
           <li>
@@ -1020,14 +993,6 @@
         
           <li>
             <a href="/2023/03/28/systemsAndNetworks/kali%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/">kali常用软件安装</a>
-          </li>
-        
-          <li>
-            <a href="/2023/03/28/securityAndEncryption/%E5%B7%A5%E5%85%B7%E5%A4%87%E5%BF%98/">工具备忘</a>
-          </li>
-        
-          <li>
-            <a href="/2023/03/27/systemsAndNetworks/wsl%E5%AE%89%E8%A3%85kali/">wsl安装kali</a>
           </li>
         
       </ul>
