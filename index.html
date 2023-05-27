@@ -73,8 +73,8 @@
   
     <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2023/04/25/hello-world/" class="article-date">
-  <time class="dt-published" datetime="2023-04-25T01:38:51.496Z" itemprop="datePublished">2023-04-25</time>
+    <a href="/2023/05/27/hello-world/" class="article-date">
+  <time class="dt-published" datetime="2023-05-27T15:24:05.148Z" itemprop="datePublished">2023-05-27</time>
 </a>
     
   </div>
@@ -85,7 +85,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/04/25/hello-world/">Hello World</a>
+      <a class="p-name article-title" href="/2023/05/27/hello-world/">Hello World</a>
     </h1>
   
 
@@ -110,7 +110,71 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://luolong47.github.io/2023/04/25/hello-world/" data-id="clgvlnzzt0000mkm29cbs5wxo" data-title="Hello World" class="article-share-link">Teilen</a>
+      <a data-url="https://luolong47.github.io/2023/05/27/hello-world/" data-id="cli658ku20000j7p9epdogoh7" data-title="Hello World" class="article-share-link">Teilen</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-systemsAndNetworks/Zerotier Flow Rules Help" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/05/27/systemsAndNetworks/Zerotier%20Flow%20Rules%20Help/" class="article-date">
+  <time class="dt-published" datetime="2023-05-27T15:22:39.000Z" itemprop="datePublished">2023-05-27</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/05/27/systemsAndNetworks/Zerotier%20Flow%20Rules%20Help/">Zerotier Flow Rules Help</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>|</p>
+<h3 id="The-Basics"><a href="#The-Basics" class="headerlink" title="The Basics"></a>The Basics</h3><p>The ZeroTier rule definition language is designed to be simple for both humans and machines to read. Our editor compiles it into an actual ZeroTier rule set as you type, which is shown in the light yellow box to the right of the editor.</p>
+<p><strong>#</strong> <em>the remainder of this line is a comment</em></p>
+<p><strong>action</strong> [… args …]<br>[<strong>or</strong>] [<strong>not</strong>] [<em>match</em> […]]<br>[ … ]<br><strong>;</strong></p>
+<p><strong>macro</strong> <em>macro-name</em>[($<em>var-name</em>[,…])]<br>[… matches | actions …]<br><strong>;</strong></p>
+<p><strong>include</strong> <em>macro-name</em>[(…)]</p>
+<p>A few things to remember:</p>
+<ul>
+<li>An action containing no matches is always taken. For example “accept;” will accept any packet.</li>
+<li>Matches in an action are evaluated in order with each being AND the previous, and the action is taken if the final result is <em>true</em>. The modifiers <strong>or</strong> and <strong>not</strong> can be used to change the logical sense of the next match. The <strong>and</strong> keyword is allowed for clarity but has no effect.</li>
+<li>Rule parsing stops at the first <strong>accept</strong> or <strong>drop</strong>. If it seems like later rules are not being evaluated this is usually why. The best way to fix this is usually to convert an <strong>accept</strong> into a <strong>drop</strong> with the inverse logical sense. For example “accept ethertype 0x86dd;” would end rule evaluation for every IPv6 packet, while “drop not ethertype 0x86dd;” would just drop non-IPv6 packets but otherwise continue.</li>
+<li>Match criteria that do not apply, such as IP ports on non-IP packets, evaluate to false.</li>
+<li>If nothing matches, the default action is <strong>drop</strong>. A network with no rules allows nothing.</li>
+<li>A network can only have 1024 entries (both matches and actions count) in its base rule set and 64 entries in a capability rule set.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+</tr>
+</thead>
+</table>
+<p>|</p>
+<h3 id="Actions"><a href="#Actions" class="headerlink" title="Actions"></a>Actions</h3><p>| |<br>| <strong>drop</strong> | Discard packet and stop evaluating rules (default) |<br>| <strong>accept</strong> | Accept packet and stop evaluating rules |<br>| <strong>redirect <zt-address></strong> | Redirect packet to ZeroTier address (MACs and payload unchanged) |<br>| <strong>tee <maxlen> <zt-address></strong> | Send first &lt;&#x3D;maxlen (or -1 for all) bytes of packet to ZeroTier address and continue |<br>| <strong>watch <maxlen> <zt-address></strong> | Like <strong>tee</strong> but drops packets if observer has not recently acknowledged |<br>|</p>
+<h3 id="Matches"><a href="#Matches" class="headerlink" title="Matches"></a>Matches</h3><p>| |<br>| <strong>ztsrc <zt-address></strong> | Source ZeroTier (VL1) address |<br>| <strong>ztdest <zt-address></strong> | Destination ZeroTier (VL1) address |<br>| <strong>ethertype <type></strong> | Ethernet type code (16-bit, use 0x#### for hex) |<br>| <strong>iptos <mask> &lt;start[-end]&gt;</strong> | Match range of IP TOS field values after masking |<br>| <strong>ipprotocol <protocol></strong> | Value of IP protocol field (e.g. 6 for TCP) |<br>| <strong>random <number></strong> | Matches with given probability, range 0.0 to 1.0 |<br>| <strong>macsrc <MAC></strong> | Source Ethernet MAC address (can be specified with or without :) |<br>| <strong>macdest <MAC></strong> | Destination Ethernet MAC address (can be specified with or without :) |<br>| <strong>ipsrc &lt;IP&#x2F;bits&gt;</strong> | Source IP address and netmask bits (e.g. 10.0.0.0&#x2F;8 or 2001:1234::&#x2F;32) |<br>| <strong>ipdest &lt;IP&#x2F;bits&gt;</strong> | Destination IP address and netmask bits (e.g. 10.0.0.0&#x2F;8 or 2001:1234::&#x2F;32) |<br>| <strong>icmp <type> <code></strong> | ICMP type and code (use code -1 for types that lack codes or to match any code) |<br>| <strong>sport <start[-end]></strong> | Source IP port range (TCP, UDP, SCTP, or UDPLite) |<br>| <strong>dport <start[-end]></strong> | Destination IP port range (TCP, UDP, SCTP, or UDPLite) |<br>| <strong>framesize <start[-end]></strong> | Ethernet frame size range |<br>| <strong>chr <characteristic></strong> | Packet characteristic bit (see below) |<br>| <strong>tand <tag-id> <value></strong> | Bitwise AND of sender and receiver tags equals value |<br>| <strong>tor <tag-id> <value></strong> | Bitwise OR of sender and receiver tags equals value |<br>| <strong>txor <tag-id> <value></strong> | Bitwise XOR of sender and receiver tags equals value |<br>| <strong>tdiff <tag-id> <value></strong> | Difference between sender and receiver tags <= value (use 0 to check equality) |<br>| <strong>teq <tag-id> <value></strong> | Both sender and receiver tags have the specified value |<br>|</p>
+<h3 id="Packet-Characteristics"><a href="#Packet-Characteristics" class="headerlink" title="Packet Characteristics"></a>Packet Characteristics</h3><p>| |<br>| <strong>inbound</strong> | True at receiver and false at sender; use "not chr inbound" for outbound |<br>| <strong>multicast</strong> | True if this is a multicast packet (based on MAC) |<br>| <strong>broadcast</strong> | True for broadcast, equivalent to "macdest ff:ff:ff:ff:ff:ff" |<br>| <strong>tcp_fin</strong> | TCP packet (V4 or V6) and TCP FIN flag is set |<br>| <strong>tcp_syn</strong> | TCP packet (V4 or V6) and TCP SYN flag is set |<br>| <strong>tcp_rst</strong> | TCP packet (V4 or V6) and TCP RST flag is set |<br>| <strong>tcp_psh</strong> | TCP packet (V4 or V6) and TCP PSH flag is set |<br>| <strong>tcp_ack</strong> | TCP packet (V4 or V6) and TCP ACK flag is set |<br>| <strong>tcp_urg</strong> | TCP packet (V4 or V6) and TCP URG flag is set |<br>| <strong>tcp_ece</strong> | TCP packet (V4 or V6) and TCP ECE flag is set |<br>| <strong>tcp_cwr</strong> | TCP packet (V4 or V6) and TCP CWR flag is set |<br>| <strong>tcp_ns</strong> | TCP packet (V4 or V6) and TCP NS flag is set |<br>| <strong>tcp_rs2</strong> | TCP packet (V4 or V6) and TCP reserved bit 2 flag is set |<br>| <strong>tcp_rs1</strong> | TCP packet (V4 or V6) and TCP reserved bit 1 flag is set |<br>| <strong>tcp_rs0</strong> | TCP packet (V4 or V6) and TCP reserved bit 0 flag is set |</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://luolong47.github.io/2023/05/27/systemsAndNetworks/Zerotier%20Flow%20Rules%20Help/" data-id="cli658kum000fj7p9fhy8ests" data-title="Zerotier Flow Rules Help" class="article-share-link">Teilen</a>
       
       
       
@@ -248,7 +312,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://luolong47.github.io/2023/04/25/programmingLanguages/net%E7%9A%84%E5%AD%A6%E4%B9%A0%E8%B7%AF%E5%BE%84/" data-id="clgvlo0070007mkm2d69c6ll4" data-title=".net的学习路径" class="article-share-link">Teilen</a>
+      <a data-url="https://luolong47.github.io/2023/04/25/programmingLanguages/net%E7%9A%84%E5%AD%A6%E4%B9%A0%E8%B7%AF%E5%BE%84/" data-id="cli658kuf0007j7p9e7rl6aw6" data-title=".net的学习路径" class="article-share-link">Teilen</a>
       
       
       
@@ -296,7 +360,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://luolong47.github.io/2023/04/25/systemsAndNetworks/zerotier%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86/" data-id="clgvlo00g000jmkm29021289z" data-title="zerotier实现原理" class="article-share-link">Teilen</a>
+      <a data-url="https://luolong47.github.io/2023/04/25/systemsAndNetworks/zerotier%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86/" data-id="cli658kup000kj7p90ynodzhh" data-title="zerotier实现原理" class="article-share-link">Teilen</a>
       
       
       
@@ -375,7 +439,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://luolong47.github.io/2023/04/03/systemsAndNetworks/%E7%94%A8%E6%88%B7%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%BF%81%E7%A7%BB%E5%88%B0%E5%85%B6%E4%BB%96%E7%9B%98%E7%AC%A6/" data-id="clgvlo00h000kmkm2cpiyaq9w" data-title="用户配置文件迁移到其他盘符" class="article-share-link">Teilen</a>
+      <a data-url="https://luolong47.github.io/2023/04/03/systemsAndNetworks/%E7%94%A8%E6%88%B7%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%BF%81%E7%A7%BB%E5%88%B0%E5%85%B6%E4%BB%96%E7%9B%98%E7%AC%A6/" data-id="cli658kuq000lj7p98spg05ym" data-title="用户配置文件迁移到其他盘符" class="article-share-link">Teilen</a>
       
       
       
@@ -413,7 +477,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://luolong47.github.io/2023/03/31/securityAndEncryption/SQL%E6%B3%A8%E5%85%A5%E4%B8%93%E9%A2%98/" data-id="clgvlo0090009mkm2hknwfqw8" data-title="SQL注入专题" class="article-share-link">Teilen</a>
+      <a data-url="https://luolong47.github.io/2023/03/31/securityAndEncryption/SQL%E6%B3%A8%E5%85%A5%E4%B8%93%E9%A2%98/" data-id="cli658kuh0009j7p9064ybaip" data-title="SQL注入专题" class="article-share-link">Teilen</a>
       
       
       
@@ -457,7 +521,7 @@
 <p><code>hydra-waizard</code>可以引导运行</p>
 <h3 id="pw-instector"><a href="#pw-instector" class="headerlink" title="pw-instector"></a>pw-instector</h3><figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">PW-Inspector v<span class="number">0</span>.<span class="number">2</span> (c) <span class="number">2005</span> by van Hauser / THC vh@thc.org [https:<span class="regexp">//gi</span>thub.com/vanhauser-thc/thc-hydra]</span><br><span class="line"></span><br><span class="line">语法: pw-inspector [-i FILE] [-o FILE] [-m MINLEN] [-M MAXLEN] [-c MINSETS] -l -u -n -p -s</span><br><span class="line"></span><br><span class="line">选项：</span><br><span class="line">  -i 用于读取密码的FILE文件（默认：stdin）。</span><br><span class="line">  -o 写入有效密码的FILE文件（默认：stdout）。</span><br><span class="line">  -m MINLEN 有效密码的最小长度</span><br><span class="line">  -M MAXLEN 有效密码的最大长度</span><br><span class="line">  -c MINSETS 所需的最小套数(默认：全部给定)</span><br><span class="line">设置：</span><br><span class="line">  -l 小写字母(a,b,c,d等)</span><br><span class="line">  -u 大写字母(A,B,C,D等)</span><br><span class="line">  -n 数字(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,等)</span><br><span class="line">  -p 可打印字符（不是-l/-n/-p，例如$, !,/, (,*,等)</span><br><span class="line">  -s 特殊字符 - 所有其他不在上述集合内的字符</span><br><span class="line"></span><br><span class="line">PW-Inspector读入密码并打印出符合要求的密码。</span><br><span class="line">返回的代码是找到的有效密码的数量，如果没有找到则为<span class="number">0</span>。</span><br><span class="line">用于安全：检查密码，如果返回<span class="number">0</span>，则拒绝密码选择。</span><br><span class="line">用于黑客攻击：将你的字典文件修饰成目标的pw要求。</span><br><span class="line">只允许用于合法目的。</span><br></pre></td></tr></table></figure>
 
-<h3 id="hydra-gtk"><a href="#hydra-gtk" class="headerlink" title="hydra-gtk"></a>hydra-gtk</h3><p>启动的命令行为<code>xhydra</code><br><img src="https://cdn.nlark.com/yuque/0/2023/png/26088266/1680142307384-96bce474-19ae-433a-9512-3e0e2f122dc6.png#averageHue=%23282b35&clientId=ued48e59d-7643-4&from=paste&height=612&id=u0cafca58&name=image.png&originHeight=612&originWidth=516&originalType=binary%E2%88%B6=1&rotation=0&showTitle=false&size=28485&status=done&style=none&taskId=ub7a842eb-e611-462c-9b84-924027eb820&title=&width=516" alt="image.png"></p>
+<h3 id="hydra-gtk"><a href="#hydra-gtk" class="headerlink" title="hydra-gtk"></a>hydra-gtk</h3><p>启动的命令行为<code>xhydra</code><br><img src="https://cdn.nlark.com/yuque/0/2023/png/26088266/1680142307384-96bce474-19ae-433a-9512-3e0e2f122dc6.png#averageHue=%23282b35&clientId=ued48e59d-7643-4&from=paste&height=612&id=u0cafca58&originHeight=612&originWidth=516&originalType=binary%E2%88%B6=1&rotation=0&showTitle=false&size=28485&status=done&style=none&taskId=ub7a842eb-e611-462c-9b84-924027eb820&title=&width=516" alt="image.png"></p>
 <h2 id="nmap"><a href="#nmap" class="headerlink" title="nmap"></a>nmap</h2><h3 id="ncat"><a href="#ncat" class="headerlink" title="ncat"></a>ncat</h3><p>ncat 是 NMAP 项目对 Netcat 的重新实现，提供了原始实现中的大部分功能，以及一些新的功能，如 IPv6 和 SSL 支持。端口扫描支持已被删除。</p>
 <figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line">Ncat <span class="number">7.93</span> ( https:<span class="regexp">//nmap</span>.org/ncat )</span><br><span class="line">用法: ncat [options] [hostname] [port］</span><br><span class="line"></span><br><span class="line">选项以秒为时间单位。如果是毫秒，则加<span class="string">&#x27;ms&#x27;</span>、<span class="string">&#x27;s&#x27;</span>表示秒，<span class="string">&#x27;m&#x27;</span>表示分钟，<span class="string">&#x27;h&#x27;</span>表示小时（例如，<span class="number">500</span>ms）。</span><br><span class="line">  -<span class="number">4</span> 仅使用IPv4</span><br><span class="line">  -<span class="number">6</span> 只使用IPv6</span><br><span class="line">  --U, --unixsock 只使用Unix域套接字</span><br><span class="line">      --vsock 只使用vsock套接字</span><br><span class="line">  -C, --crlf 使用CRLF作为EOL序列</span><br><span class="line">  -c, --sh-<span class="keyword">exec</span> &lt;command&gt; 通过/bin/sh执行指定的命令</span><br><span class="line">  -e, --<span class="keyword">exec</span> &lt;command&gt; 执行指定的命令</span><br><span class="line">      --lua-<span class="keyword">exec</span> &lt;文件名&gt; 执行指定的Lua脚本</span><br><span class="line">  -g hop1[,hop2,...] 松散的源路由跳点（最多<span class="number">8</span>个）。</span><br><span class="line">  -G &lt;n&gt; 松散源路由跳点（<span class="number">4</span>，<span class="number">8</span>，<span class="number">12</span>，...)</span><br><span class="line">  -m, --max-conns &lt;n&gt; 最大&lt;n&gt;同时连接数</span><br><span class="line">  -h, --help 显示此帮助屏幕</span><br><span class="line">  -d, --delay &lt;<span class="keyword">time</span>&gt; 读/写之间的等待时间</span><br><span class="line">  -o, --output &lt;filename&gt; 倾倒会话数据到一个文件中</span><br><span class="line">  -<span class="keyword">x</span>, --<span class="keyword">hex</span>-<span class="keyword">dump</span> &lt;文件名&gt; 将会话数据以十六进制形式转存到文件中</span><br><span class="line">  -i, --idle-timeout &lt;<span class="keyword">time</span>&gt; 空闲读/写超时</span><br><span class="line">  -p, --source-port port 指定要使用的源端口</span><br><span class="line">  -s, --source addr 指定要使用的源地址（不影响-l）。</span><br><span class="line">  -l, --<span class="keyword">listen</span> 绑定并监听传入的连接</span><br><span class="line">  -k, --keep-<span class="keyword">open</span> 在监听模式下接受多个连接</span><br><span class="line">  -n, --nodns 不通过DNS解析主机名</span><br><span class="line">  -t, --telnet 回答Telnet协商</span><br><span class="line">  -u, --udp 使用UDP而不是默认的TCP</span><br><span class="line">      --sctp 使用SCTP而不是默认的TCP</span><br><span class="line">  -v, --verbose 设置粗话级别（可以多次使用）。</span><br><span class="line">  -w, --<span class="keyword">wait</span> &lt;<span class="keyword">time</span>&gt; 连接超时</span><br><span class="line">  -z Zero-I/O模式，只报告连接状态</span><br><span class="line">      --append-output 追加而不是破坏指定的输出文件</span><br><span class="line">      --<span class="keyword">send</span>-only 只发送数据，忽略收到的数据；EOF时退出</span><br><span class="line">      --<span class="keyword">recv</span>-only 只接收数据，不发送任何东西</span><br><span class="line">      --<span class="keyword">no</span>-<span class="keyword">shutdown</span> 在收到stdin上的EOF时继续半双工。</span><br><span class="line">      --allow 只允许指定的主机连接到Ncat</span><br><span class="line">      --allowfile 允许连接到Ncat的主机的文件</span><br><span class="line">      --deny 拒绝指定的主机连接到Ncat</span><br><span class="line">      --denyfile 被拒绝连接到Ncat的主机文件</span><br><span class="line">      --broker 启用Ncat的连接中介模式</span><br><span class="line">      --chat 启动一个简单的Ncat聊天服务器</span><br><span class="line">      --proxy &lt;addr[:port]&gt; 指定要通过代理的主机地址</span><br><span class="line">      --proxy-type &lt;type&gt; 指定代理类型（<span class="string">&quot;http&quot;</span>、<span class="string">&quot;socks4&quot;</span>、<span class="string">&quot;socks5&quot;</span>）。</span><br><span class="line">      --proxy-auth &lt;auth&gt; 用HTTP或SOCKS代理服务器认证</span><br><span class="line">      --proxy-dns &lt;type&gt; 指定解决代理目标的位置</span><br><span class="line">      --ssl 用SSL连接或监听</span><br><span class="line">      --ssl-cert 指定用于监听的SSL证书文件（PEM）。</span><br><span class="line">      --ssl-key 指定用于监听的SSL私钥（PEM）。</span><br><span class="line">      --ssl-verify 验证证书的信任和域名</span><br><span class="line">      --ssl-trustfile 包含信任的SSL证书的PEM文件</span><br><span class="line">      --ssl-ciphers 包含要使用的SSL密码的密码列表</span><br><span class="line">      --ssl-servername 请求不同的服务器名称（SNI）。</span><br><span class="line">      --ssl-alpn 要使用的ALPN协议列表</span><br><span class="line">      --version 显示Ncat的版本信息并退出</span><br><span class="line"></span><br><span class="line">在网络上使用正常的猫功能。</span><br><span class="line">更多信息：https:<span class="regexp">//mann</span>ed.org/ncat。</span><br><span class="line"></span><br><span class="line"> - 监听指定端口的输入并将其写入指定文件：</span><br><span class="line">   ncat -l port &gt; path/to/file</span><br><span class="line"></span><br><span class="line"> - 接受多个连接并在它们被关闭后保持ncat的开放：</span><br><span class="line">   ncat -lk port</span><br><span class="line"></span><br><span class="line"> - 将指定文件的输出写到指定端口的指定主机上：</span><br><span class="line">   ncat address port &lt; path/to/file</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
@@ -478,7 +542,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://luolong47.github.io/2023/03/30/systemsAndNetworks/kali%20%20%E5%B7%A5%E5%85%B7%E6%96%87%E6%A1%A3/" data-id="clgvlo00e000fmkm2eemo2bal" data-title="kali  工具文档" class="article-share-link">Teilen</a>
+      <a data-url="https://luolong47.github.io/2023/03/30/systemsAndNetworks/kali%20%20%E5%B7%A5%E5%85%B7%E6%96%87%E6%A1%A3/" data-id="cli658kum000gj7p99v6zcd6g" data-title="kali  工具文档" class="article-share-link">Teilen</a>
       
       
       
@@ -535,7 +599,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://luolong47.github.io/2023/03/28/systemsAndNetworks/kali%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/" data-id="clgvlo00e000gmkm2c9vk78hu" data-title="kali常用软件安装" class="article-share-link">Teilen</a>
+      <a data-url="https://luolong47.github.io/2023/03/28/systemsAndNetworks/kali%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/" data-id="cli658kun000hj7p9e2xt2lll" data-title="kali常用软件安装" class="article-share-link">Teilen</a>
       
       
       
@@ -681,7 +745,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://luolong47.github.io/2023/03/28/securityAndEncryption/%E5%B7%A5%E5%85%B7%E5%A4%87%E5%BF%98/" data-id="clgvlo00b000cmkm266i744bc" data-title="工具备忘" class="article-share-link">Teilen</a>
+      <a data-url="https://luolong47.github.io/2023/03/28/securityAndEncryption/%E5%B7%A5%E5%85%B7%E5%A4%87%E5%BF%98/" data-id="cli658kuj000cj7p9fdjm2vxh" data-title="工具备忘" class="article-share-link">Teilen</a>
       
       
       
@@ -754,49 +818,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://luolong47.github.io/2023/03/27/systemsAndNetworks/wsl%E5%AE%89%E8%A3%85kali/" data-id="clgvlo00g000imkm2h8q67dee" data-title="wsl安装kali" class="article-share-link">Teilen</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-systemsAndNetworks/wsl 导出和导入系统" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/03/27/systemsAndNetworks/wsl%20%E5%AF%BC%E5%87%BA%E5%92%8C%E5%AF%BC%E5%85%A5%E7%B3%BB%E7%BB%9F/" class="article-date">
-  <time class="dt-published" datetime="2023-03-27T12:09:53.000Z" itemprop="datePublished">2023-03-27</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/03/27/systemsAndNetworks/wsl%20%E5%AF%BC%E5%87%BA%E5%92%8C%E5%AF%BC%E5%85%A5%E7%B3%BB%E7%BB%9F/">wsl 导出和导入系统</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">wsl <span class="literal">--shutdown</span> kali<span class="literal">-linux</span> <span class="comment"># 停止系统</span></span><br><span class="line">wsl <span class="literal">--export</span> kali<span class="literal">-linux</span> D:\系统备份\kali<span class="literal">-linux</span>.tar.gz <span class="comment"># 导出系统</span></span><br><span class="line">wsl <span class="literal">--unregister</span> <span class="literal">--all</span> <span class="comment"># 删除所有系统</span></span><br><span class="line">wsl <span class="literal">--import</span> kali<span class="literal">-linux</span> D:\kali<span class="literal">-linux</span>\ D:\系统备份\kali<span class="literal">-linux</span>.tar.gz <span class="literal">--preserve-rootfs</span> <span class="comment"># 导入系统到D:\kali-linux\，保持kali用户</span></span><br></pre></td></tr></table></figure>
-
-<p>导入 wsl 后，默认登录用户是 root,需要设置 <code>/etc/wsl.conf</code></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">myUsername=caloewen</span><br><span class="line"><span class="built_in">echo</span> -e <span class="string">&quot;[user]\ndefault=<span class="variable">$myUsername</span>&quot;</span> &gt;&gt; /etc/wsl.conf</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://luolong47.github.io/2023/03/27/systemsAndNetworks/wsl%20%E5%AF%BC%E5%87%BA%E5%92%8C%E5%AF%BC%E5%85%A5%E7%B3%BB%E7%BB%9F/" data-id="clgvlo00f000hmkm2evfg1viu" data-title="wsl 导出和导入系统" class="article-share-link">Teilen</a>
+      <a data-url="https://luolong47.github.io/2023/03/27/systemsAndNetworks/wsl%E5%AE%89%E8%A3%85kali/" data-id="cli658kuo000jj7p9dzwad9sf" data-title="wsl安装kali" class="article-share-link">Teilen</a>
       
       
       
@@ -831,7 +853,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archiv</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/04/">April 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">March 2023</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/05/">May 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/04/">April 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">March 2023</a></li></ul>
     </div>
   </div>
 
@@ -844,7 +866,11 @@
       <ul>
         
           <li>
-            <a href="/2023/04/25/hello-world/">Hello World</a>
+            <a href="/2023/05/27/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2023/05/27/systemsAndNetworks/Zerotier%20Flow%20Rules%20Help/">Zerotier Flow Rules Help</a>
           </li>
         
           <li>
@@ -857,10 +883,6 @@
         
           <li>
             <a href="/2023/04/03/systemsAndNetworks/%E7%94%A8%E6%88%B7%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%BF%81%E7%A7%BB%E5%88%B0%E5%85%B6%E4%BB%96%E7%9B%98%E7%AC%A6/">用户配置文件迁移到其他盘符</a>
-          </li>
-        
-          <li>
-            <a href="/2023/03/31/securityAndEncryption/SQL%E6%B3%A8%E5%85%A5%E4%B8%93%E9%A2%98/">SQL注入专题</a>
           </li>
         
       </ul>
